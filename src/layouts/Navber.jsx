@@ -4,7 +4,7 @@ import Flex from '../components/Flex'
 import Image from '../components/Image'
 import List from '../components/List'
 
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo1.png'
 
 const Navber = () => {
   return (
