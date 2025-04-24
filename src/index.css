@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
 @theme {
+   /* Space */
     --spacing-container: 1600px; 
+
+    /* color */
+    --color-first: #767676; 
+    --color-second: #262626; 
+    --color-third: #F5F5F3; 
+
+    /* Font Family */
+    --font-san: "DM Sans", ; 
   }
