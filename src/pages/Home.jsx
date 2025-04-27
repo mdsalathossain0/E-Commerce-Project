@@ -1,10 +1,11 @@
 import React from 'react'
 import Image from '../components/Image'
+import Facelity from '../layouts/Facelity'
+import Offers from '../layouts/Offers'
 
 
 import Bannerimg from '../assets/banner.jpg'
-import Facelity from '../components/Facelity'
-import Offers from '../layouts/Offers'
+import Cart from '../components/Cart'
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
 
     <Facelity/>
     <Offers/>
+    <Cart/>
       
     </>
     

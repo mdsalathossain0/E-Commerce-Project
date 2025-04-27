@@ -1,11 +1,12 @@
 import React from 'react'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
+import Image from '../components/Image'
 
 import FacelityOne from '../assets/facelity1.png'
 import FacelityTwo from '../assets/facelity2.png'
 import FacelityThree from '../assets/facelity3.png'
-import Image from './Image'
+
 
 const Facelity = () => {
   return (
