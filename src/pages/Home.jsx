@@ -5,7 +5,10 @@ import Offers from '../layouts/Offers'
 
 
 import Bannerimg from '../assets/banner.jpg'
-import Cart from '../components/Cart'
+
+import Newarival from '../layouts/Newarival'
+import Bestseller from '../layouts/Bestseller'
+import Phone from '../layouts/Phone'
 
 
 const Home = () => {
@@ -18,7 +21,9 @@ const Home = () => {
 
     <Facelity/>
     <Offers/>
-    <Cart/>
+    <Newarival/>
+    <Bestseller/>
+    <Phone/>
       
     </>
     
