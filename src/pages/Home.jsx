@@ -9,6 +9,7 @@ import Bannerimg from '../assets/banner.jpg'
 import Newarival from '../layouts/Newarival'
 import Bestseller from '../layouts/Bestseller'
 import Phone from '../layouts/Phone'
+import SpecialOffer from '../layouts/SpecialOffer'
 
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
     <Newarival/>
     <Bestseller/>
     <Phone/>
+    <SpecialOffer/>
       
     </>
     
