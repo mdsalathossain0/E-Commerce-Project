@@ -5,6 +5,7 @@ import Image from '../components/Image'
 import List from '../components/List'
 
 import Logo from '../assets/logo1.png'
+import { Link } from 'react-router-dom'
 
 const Navber = () => {
   return (
@@ -13,15 +14,19 @@ const Navber = () => {
         <Container>
             <Flex>
                 <div className='w-5/12'>
-                    <div><Image src={Logo}/></div>
+                    <Link to='/'><div><Image src={Logo}/></div></Link>
                 </div>
                 <div className='w-7/12'>
                     <Flex className=' gap-x-10'>
-                        <List text='Home'/>
-                        <List text='Shop'/>
-                        <List text='About'/>
-                        <List text='Contacts'/>
-                        <List text='Journal'/>
+                        <Link to='/'><List text='Home'/></Link>
+                        <Link to='/shop'><List text='Shop'/></Link>
+                        <Link to='/about'><List text='About'/></Link>
+                        <Link to='/contact'><List text='Contacts'/></Link>
+                        <Link to='/journal'><List text='Journal'/></Link>
+                        
+                        
+                        
+                        
                     </Flex>
                 </div>
             </Flex>

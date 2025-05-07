@@ -13,12 +13,14 @@ import Cart from './pages/Cart';
 import CheckOut from './pages/CheckOut';
 import Error from './pages/Error';
 import RootLayout from './layouts/RootLayout';
+import ProductsDetails from './pages/ProductsDetails';
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
     <Route path="/" element={<RootLayout />}>
     <Route path="/" element={<Home />}></Route>
     <Route path="/shop" element={<Shop />}></Route>
+    <Route path="/productdetails" element={<ProductsDetails />}></Route>
     <Route path="/about" element={<About />}></Route>
     <Route path="/contact" element={<Contact />}></Route>
     <Route path="/journal" element={<Journal />}></Route>

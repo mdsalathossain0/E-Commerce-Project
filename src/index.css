@@ -3,6 +3,7 @@
 @theme {
    /* Space */
     --spacing-container: 1600px; 
+    --spacing-w49: 49%; 
 
     /* color */
     --color-first: #767676; 
