@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
 import Image from '../components/Image'
+import Button from '../components/Button'
 
 import Productimg1 from '../assets/productdetails1.png'
 import Productimg2 from '../assets/cart12.png'
@@ -45,6 +46,30 @@ const ProductsDetails = () => {
                     <li className='w-[20px] h-[20px] rounded-full bg-[#15CBA5] hover:scale-[1.5] duration-300'></li>
                 </ul>
             </Flex>
+            <Flex className='gap-x-[75px] items-center pt-14'>
+                <h4 className='text-base text-second font-bold font-san leading-6'>SIZE:</h4>
+                <select className='py-2 px-8 border border-sixth'>
+                    <option value="S">S</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+            </Flex>
+            <Flex className='gap-x-7 items-center pt-14'>
+                <h4 className='text-base text-second font-bold font-san leading-6'>QUANTITY:</h4>
+                <Flex className='gap-x-9 py-2 px-8 border border-sixth '>
+                    <div>-</div>
+                    <div>1</div>
+                    <div>+</div>
+                </Flex>
+            </Flex>
+            <Flex className='gap-x-7 items-center pt-14'>
+                <h4 className='text-base text-second font-bold font-san leading-6'>STATUS:</h4>
+                <p className='text-base text-fivth font-normal font-san leading-7'>In stock</p>
+                
+            </Flex>
+            <Button/>
+
         </Container>
     </section>
   )
