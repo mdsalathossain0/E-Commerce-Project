@@ -15,12 +15,11 @@ const Contact = () => {
       <p className='text-sm text-first font-normal font-san'>Home</p>
       <span className='text-sm text-first font-normal font-san'><IoIosArrowForward /></span>
       <p className='text-sm text-first font-normal font-san'>Contacts</p>
-
      </Flex>
      <h4 className='text-[39px] text-second font-bold font-san'>Fill up a Form</h4>
-     <Input text='Name' placeholder='Your name here' type='text' check='name'/>
-     <Input text='Email' placeholder='Your email here' type='email' check='email'/>
-     <Input text='Message' placeholder='Your message here' type='textarea' check='message'/>
+     <Input className='w-w49' text='Name' placeholder='Your name here' type='text' check='name'/>
+     <Input className='w-w49' text='Email' placeholder='Your email here' type='email' check='email'/>
+     <Input className='w-w49' text='Message' placeholder='Your message here' type='textarea' check='message'/>
      <div className='pt-8 pb-30'>
       <Button text='Post'/>
      </div>

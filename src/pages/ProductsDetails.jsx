@@ -105,9 +105,9 @@ const ProductsDetails = () => {
             </Flex>
             <p className='w-[95%] text-base text-first font-normal font-san leading-8 pt-7 pb-4 border-b-2 border-sixth'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
             <h5 className='text-xl text-second font-bold font-san leading-7 pt-13 pb-12'>Add a Review</h5>
-            <Input type='text' text='Name' check='name' placeholder='Your name here'/>
-            <Input type='email' text='Email' check='email' placeholder='Your email here'/>
-            <Input type='textarea' text='Review' check='review' placeholder='Your review here'/>
+            <Input className='w-w49' type='text' text='Name' check='name' placeholder='Your name here'/>
+            <Input className='w-w49' type='email' text='Email' check='email' placeholder='Your email here'/>
+            <Input className='w-w49' type='textarea' text='Review' check='review' placeholder='Your review here'/>
             <div className='pt-6 pb-[250px]'>
                 <Button text='Post'/>
             </div>
