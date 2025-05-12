@@ -107,7 +107,7 @@ const ProductsDetails = () => {
             <h5 className='text-xl text-second font-bold font-san leading-7 pt-13 pb-12'>Add a Review</h5>
             <Input type='text' text='Name' check='name' placeholder='Your name here'/>
             <Input type='email' text='Email' check='email' placeholder='Your email here'/>
-            <Input type='message' text='Review' check='review' placeholder='Your review here'/>
+            <Input type='textarea' text='Review' check='review' placeholder='Your review here'/>
             <div className='pt-6 pb-[250px]'>
                 <Button text='Post'/>
             </div>
