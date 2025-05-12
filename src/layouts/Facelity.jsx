@@ -15,19 +15,19 @@ const Facelity = () => {
         <Flex className='justify-between'>
             <div>
                 <Flex className='gap-x-4 items-center'>
-                    <div><Image src={FacelityOne}/></div>
+                    <div className='w-[20px]'><Image className='w-full' src={FacelityOne}/></div>
                     <p className='text-base text-fourth font-san font-normal'>Two years warranty</p>
                 </Flex>
             </div>
             <div>
             <Flex className='gap-x-4 items-center'>
-                    <div><Image src={FacelityTwo}/></div>
+                    <div className='w-[20px]'><Image className='w-full' src={FacelityTwo}/></div>
                     <p className='text-base text-fourth font-san font-normal'>Free shipping</p>
                 </Flex>
             </div>
             <div>
             <Flex className='gap-x-4 items-center'>
-                    <div><Image src={FacelityThree}/></div>
+                    <div className='w-[20px]'><Image className='w-full' src={FacelityThree}/></div>
                     <p className='text-base text-fourth font-san font-normal'>Return policy in 30 days</p>
                 </Flex>
             </div>
