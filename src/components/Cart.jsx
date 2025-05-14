@@ -9,7 +9,7 @@ import { FaCodeCompare } from 'react-icons/fa6'
 const Cart = ({title, price, color, image}) => {
   return (
     
-        <div className='w-[24%]   relative group '>
+        <div className='w-[370px]   relative group '>
             <Image className='w-full h-[370px]' src={image}/>
             <Flex className='justify-between items-center'>
                 <h5 className='text-xl text-second font-bold font-san pt-6 pb-4'>{title}</h5>
