@@ -17,3 +17,20 @@
     /* Font Family */
     --font-san: "DM Sans", ; 
   }
+  .slick-dots{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 150px;
+  }
+  .slick-dots ul li div{
+    font-size: 16px;
+    color: transparent;
+    border-right: 3px solid white;
+    padding-right: 12px;
+
+  }
+  .slick-dots ul .slick-active div{
+    color: black;
+    border-right: 3px solid black;
+  }

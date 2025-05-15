@@ -4,22 +4,21 @@ import Facelity from '../layouts/Facelity'
 import Offers from '../layouts/Offers'
 
 
-import Bannerimg from '../assets/banner.jpg'
+
 
 import Newarival from '../layouts/Newarival'
 import Bestseller from '../layouts/Bestseller'
 import Phone from '../layouts/Phone'
 import SpecialOffer from '../layouts/SpecialOffer'
+import Banner from '../layouts/Banner'
 
 
 const Home = () => {
   return (
     <>
     
-    <div >
-      <Image className='w-full' src={Bannerimg}/>
-    </div>
 
+    <Banner/>
     <Facelity/>
     <Offers/>
     <Newarival/>
