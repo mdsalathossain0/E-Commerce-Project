@@ -9,14 +9,16 @@ import { IoIosArrowForward } from 'react-icons/io'
 import Image1 from '../assets/cart1.png'
 import Image2 from '../assets/productdetails1.png'
 import AboutCard from '../components/AboutCard'
+import { useSelector } from 'react-redux'
 
 const About = () => {
+  let data = useSelector((state)=>state.action.prevvalue)
   return (
    <section className='py-26'>
     <Container>
      <SubHeading text='About'/>
      <Flex className='items-center gap-x-2 pb-[136px]'>
-      <p className='text-sm text-first font-normal font-san'>Home</p>
+      <p className='text-sm text-first font-normal font-san'>{data}</p>
       <span className='text-sm text-first font-normal font-san'><IoIosArrowForward /></span>
       <p className='text-sm text-first font-normal font-san'>About</p>
      </Flex>
