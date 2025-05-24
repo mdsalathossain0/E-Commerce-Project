@@ -2,6 +2,9 @@ import React from 'react'
 import Image from '../components/Image'
 
 import Bannerimg from '../assets/banner.jpg'
+import Bannerimg1 from '../assets/banner1.png'
+import Bannerimg2 from '../assets/banner2.png'
+import Bannerimg3 from '../assets/banner3.png'
 import Slider from 'react-slick';
 
 const Banner = () => {
@@ -29,17 +32,17 @@ const Banner = () => {
         
       <Slider {...settings}>
         
-          <div >
-         <Image className='w-full' src={Bannerimg}/>
+          <div className='h-[600px]'>
+         <Image className='w-full h-full' src={Bannerimg}/>
          </div>
-          <div >
-         <Image className='w-full' src={Bannerimg}/>
+          <div className='h-[600px]'>
+         <Image className='w-full h-full' src={Bannerimg1}/>
          </div>
-          <div >
-         <Image className='w-full' src={Bannerimg}/>
+          <div className='h-[600px]'>
+         <Image className='w-full h-full' src={Bannerimg2}/>
          </div>
-          <div >
-         <Image className='w-full' src={Bannerimg}/>
+          <div className='h-[600px]'>
+         <Image className='w-full h-full' src={Bannerimg3}/> h-full
          </div>
         
         
