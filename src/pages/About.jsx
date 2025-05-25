@@ -10,6 +10,7 @@ import Image1 from '../assets/cart1.png'
 import Image2 from '../assets/productdetails1.png'
 import AboutCard from '../components/AboutCard'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   let data = useSelector((state)=>state.action.prevvalue)
@@ -17,11 +18,7 @@ const About = () => {
    <section className='py-26'>
     <Container>
      <SubHeading text='About'/>
-     <Flex className='items-center gap-x-2 pb-[136px]'>
-      <p className='text-sm text-first font-normal font-san'>{data}</p>
-      <span className='text-sm text-first font-normal font-san'><IoIosArrowForward /></span>
-      <p className='text-sm text-first font-normal font-san'>About</p>
-     </Flex>
+      <p className='text-sm text-first font-normal font-san pb-[136px]'><Link to={data=="Home" ? "/":`/${data}`}>{data==null ? '' : `${data} > `}</Link> About</p>
      <Flex className='justify-between'>
       <div className='w-w49 relative'><Image className='w-full' src={Image1}/>
       <Button className='absolute bottom-6 left-1/2 -translate-x-1/2' text='Our Brands'/>

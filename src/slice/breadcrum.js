@@ -8,10 +8,10 @@ export const breadcrum = createSlice({
   },
   reducers: {
     breadbutton: (state,action) => {
-        // console.log(state.value)
-        // console.log(action.payload)
-        state.prevvalue=state.currentvalue
+        if(state.currentvalue !== action.payload){
+          state.prevvalue=state.currentvalue
         state.currentvalue=action.payload
+        }
         
     },
   },

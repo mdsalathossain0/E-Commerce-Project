@@ -1,21 +1,19 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { increment } from '../slice/counterSlice'
+import React from 'react'
+
+import Container from '../components/Container'
+import SubHeading from '../components/SubHeading'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Shop = () => {
-  let dispatch = useDispatch()
-  let data = useSelector((state)=>state.counter.value)
-
-  let handleCLick=()=>{
-    dispatch(increment(1))
-  }
-
+  let data = useSelector((state)=>state.action.prevvalue)
   return (
-    <div>
-      
-      <button onClick={handleCLick}>Increment</button>
-      <h1>{data}</h1>
-    </div>
+   <section className='py-26'>
+    <Container>
+      <SubHeading text='Shop'/>
+      <p className='text-sm text-first font-normal font-san pb-[136px]'><Link to={data=="Home" ? "/": `/${data}`}>{data==null ? '': `${data} >`}</Link> Shop</p>
+    </Container>
+   </section>
   )
 }
 

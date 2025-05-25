@@ -4,18 +4,17 @@ import SubHeading from '../components/SubHeading'
 import Flex from '../components/Flex'
 import Input from '../components/Input'
 import Button from '../components/Button'
-import { IoIosArrowForward } from 'react-icons/io'
+
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Contact = () => {
+  let data = useSelector((state)=>state.action.prevvalue)
   return (
     <section className='py-26'>
       <Container>
         <SubHeading text='Contacts'/>
-     <Flex className='items-center gap-x-2 pb-[136px]'>
-      <p className='text-sm text-first font-normal font-san'>Home</p>
-      <span className='text-sm text-first font-normal font-san'><IoIosArrowForward /></span>
-      <p className='text-sm text-first font-normal font-san'>Contacts</p>
-     </Flex>
+      <p className='text-sm text-first font-normal font-san pb-[136px]'><Link to={data=="Home" ? "/" :`/${data}`}>{data==null ? '' : `${data} >`}</Link>  Contact</p>
      <h4 className='text-[39px] text-second font-bold font-san'>Fill up a Form</h4>
      <Input className='w-w49' text='Name' placeholder='Your name here' type='text' check='name'/>
      <Input className='w-w49' text='Email' placeholder='Your email here' type='email' check='email'/>
