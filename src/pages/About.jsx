@@ -13,12 +13,20 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const About = () => {
-  let data = useSelector((state)=>state.action.prevvalue)
+  let prev = useSelector((state)=>state.action.prevvalue)
+  let current = useSelector((state)=>state.action.currentvalue)
   return (
    <section className='py-26'>
     <Container>
      <SubHeading text='About'/>
-      <p className='text-sm text-first font-normal font-san pb-[136px]'><Link to={data=="Home" ? "/":`/${data}`}>{data==null ? '' : `${data} > `}</Link> About</p>
+      <p className='text-sm text-first font-normal font-san pb-[136px]'> {prev && prev !== current && current === 'About' ? (
+            
+              <Link to={prev === 'Home' ? '/' : `/${prev}`}>
+                {`${prev}  >`}
+              </Link>
+            
+          ) : ' '}
+          About </p>
      <Flex className='justify-between'>
       <div className='w-w49 relative'><Image className='w-full' src={Image1}/>
       <Button className='absolute bottom-6 left-1/2 -translate-x-1/2' text='Our Brands'/>
