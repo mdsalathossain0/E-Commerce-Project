@@ -25,7 +25,7 @@ const About = () => {
                 {`${prev}  >`}
               </Link>
             
-          ) : ' '}
+          ) : null}
           About </p>
      <Flex className='justify-between'>
       <div className='w-w49 relative'><Image className='w-full' src={Image1}/>

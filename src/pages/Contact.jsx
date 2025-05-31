@@ -9,12 +9,15 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Contact = () => {
-  let data = useSelector((state)=>state.action.prevvalue)
+  let prev = useSelector((state)=>state.action.prevvalue)
+  let current = useSelector((state)=>state.action.currentvalue)
   return (
     <section className='py-26'>
       <Container>
         <SubHeading text='Contacts'/>
-      <p className='text-sm text-first font-normal font-san pb-[136px]'><Link to={data=="Home" ? "/" :`/${data}`}>{data==null ? '' : `${data} >`}</Link>  Contact</p>
+      <p className='text-sm text-first font-normal font-san pb-[136px]'>
+        {prev && current!==prev && current === 'Contact' ? (<Link to={prev === "Home" ? "/" : `/${prev}`}>{`${prev} >`}</Link>) :null}
+          Contact</p>
      <h4 className='text-[39px] text-second font-bold font-san'>Fill up a Form</h4>
      <Input className='w-w49' text='Name' placeholder='Your name here' type='text' check='name'/>
      <Input className='w-w49' text='Email' placeholder='Your email here' type='email' check='email'/>
