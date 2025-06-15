@@ -151,6 +151,373 @@ let Data = [
         price: "$25.00",
         image:image1
     },
+    {
+        id: "12",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image2
+    },
+    {
+        id: "13",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image1
+    },
+    {
+        id: "14",
+        title: "Basic Crew Neck Tee",
+        price: "$23.00",
+        image:image2
+    },
+    {
+        id: "15",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "12",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image2
+    },
+    {
+        id: "13",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image1
+    },
+    {
+        id: "14",
+        title: "Basic Crew Neck Tee",
+        price: "$23.00",
+        image:image2
+    },
+    {
+        id: "15",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "12",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image2
+    },
+    {
+        id: "13",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image1
+    },
+    {
+        id: "14",
+        title: "Basic Crew Neck Tee",
+        price: "$23.00",
+        image:image2
+    },
+    {
+        id: "15",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "12",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image2
+    },
+    {
+        id: "13",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image1
+    },
+    {
+        id: "14",
+        title: "Basic Crew Neck Tee",
+        price: "$23.00",
+        image:image2
+    },
+    {
+        id: "15",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+    {
+        id: "17",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "12",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image2
+    },
+    {
+        id: "13",
+        title: "Basic Crew Neck Tee",
+        price: "$29.00",
+        image:image1
+    },
+    {
+        id: "14",
+        title: "Basic Crew Neck Tee",
+        price: "$23.00",
+        image:image2
+    },
+    {
+        id: "15",
+        title: "Basic Crew Neck Tee",
+        price: "$25.00",
+        image:image1
+    },
+    {
+        id: "16",
+        title: "Basic Crew Neck Tee",
+        price: "$15.00",
+        image:image2
+    },
+
 ]
 
 export default Data
