@@ -8,13 +8,16 @@ import Flex from '../components/Flex'
 import Paginate from '../components/Paginate'
 import Paginate2 from '../components/Paginate2'
 import { CgLayoutGrid, CgLayoutList } from 'react-icons/cg'
+import { BsPlus } from 'react-icons/bs'
+import { BiMinus } from 'react-icons/bi'
 
 const Shop = () => {
   let prev = useSelector((state)=>state.action.prevvalue)
   let current = useSelector((state)=>state.action.currentvalue)
 
-  let [show, setShow] = useState(false)
+  let [show, setShow] = useState(true)
   let [show2, setShow2] = useState(false)
+  let [category, setCategory] = useState(false)
 
   let handleClick1=()=>{
       setShow(true)
@@ -25,6 +28,10 @@ const Shop = () => {
     setShow(false)
   }
   
+ let handleCategory =()=>{
+  setCategory(!category)
+ }
+
   return (
    <section className='py-26'>
     <Container>
@@ -33,7 +40,37 @@ const Shop = () => {
         {prev && current !== prev && current === 'Shop' ? (<Link to={prev === 'Home' ? '/':`/${prev}`}> {`${prev} >`} </Link>) :null}
          Shop</p>
       <Flex>
-        <div className='w-3/12 '> catagory</ div>
+        <div className='w-3/12 pr-10'> 
+        <h5 className='text-xl text-second font-bold font-san pb-4'>Shop by Category</h5>
+        <Flex className='justify-between items-center py-5 border-b border-sixth'>
+          <p className='text-first text-base font-san font-normal leading-7'>Phone</p>
+          {
+            category ? 
+            <BiMinus onClick={handleCategory}  className='text-first text-xl font-san font-normal leading-7'/>
+            :
+            <BsPlus onClick={handleCategory}  className='text-first text-xl font-san font-normal leading-7'/>
+          }
+
+        </Flex>
+               {
+                category && <><Flex className='justify-between items-center py-5 border-b border-sixth'>
+                 <p className='text-first text-base font-san font-normal leading-7'>Phone</p>
+                 <BsPlus  className='text-first text-xl font-san font-normal leading-7'/>
+               </Flex>
+               <Flex className='justify-between items-center py-5 border-b border-sixth'>
+                 <p className='text-first text-base font-san font-normal leading-7'>Phone</p>
+                 <BsPlus  className='text-first text-xl font-san font-normal leading-7'/>
+               </Flex>
+               <Flex className='justify-between items-center py-5 border-b border-sixth'>
+                 <p className='text-first text-base font-san font-normal leading-7'>Phone</p>
+                 <BsPlus  className='text-first text-xl font-san font-normal leading-7'/>
+               </Flex>
+                
+                </>
+               }
+
+
+        </ div>
         <div className='w-9/12 '>
         <div className='pb-14 flex justify-between'>
          <div>          
