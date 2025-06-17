@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Container from '../components/Container'
 import SubHeading from '../components/SubHeading'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Flex from '../components/Flex'
 import Paginate from '../components/Paginate'
@@ -10,14 +10,19 @@ import Paginate2 from '../components/Paginate2'
 import { CgLayoutGrid, CgLayoutList } from 'react-icons/cg'
 import { BsPlus } from 'react-icons/bs'
 import { BiMinus } from 'react-icons/bi'
+import Category from '../components/Category'
+import Subcategory from '../components/Subcategory'
 
 const Shop = () => {
   let prev = useSelector((state)=>state.action.prevvalue)
   let current = useSelector((state)=>state.action.currentvalue)
 
+  let category = useSelector((state)=>state.category.value)
+
+
   let [show, setShow] = useState(true)
   let [show2, setShow2] = useState(false)
-  let [category, setCategory] = useState(false)
+  
 
   let handleClick1=()=>{
       setShow(true)
@@ -28,9 +33,7 @@ const Shop = () => {
     setShow(false)
   }
   
- let handleCategory =()=>{
-  setCategory(!category)
- }
+
 
   return (
    <section className='py-26'>
@@ -42,31 +45,38 @@ const Shop = () => {
       <Flex>
         <div className='w-3/12 pr-10'> 
         <h5 className='text-xl text-second font-bold font-san pb-4'>Shop by Category</h5>
-        <Flex className='justify-between items-center py-5 border-b border-sixth'>
-          <p className='text-first text-base font-san font-normal leading-7'>Phone</p>
-          {
-            category ? 
-            <BiMinus onClick={handleCategory}  className='text-first text-xl font-san font-normal leading-7'/>
-            :
-            <BsPlus onClick={handleCategory}  className='text-first text-xl font-san font-normal leading-7'/>
-          }
-
-        </Flex>
+              <Category text='Phone' type='true'/>
                {
-                category && <><Flex className='justify-between items-center py-5 border-b border-sixth'>
-                 <p className='text-first text-base font-san font-normal leading-7'>Phone</p>
-                 <BsPlus  className='text-first text-xl font-san font-normal leading-7'/>
-               </Flex>
-               <Flex className='justify-between items-center py-5 border-b border-sixth'>
-                 <p className='text-first text-base font-san font-normal leading-7'>Phone</p>
-                 <BsPlus  className='text-first text-xl font-san font-normal leading-7'/>
-               </Flex>
-               <Flex className='justify-between items-center py-5 border-b border-sixth'>
-                 <p className='text-first text-base font-san font-normal leading-7'>Phone</p>
-                 <BsPlus  className='text-first text-xl font-san font-normal leading-7'/>
-               </Flex>
+                category &&
                 
-                </>
+               <>
+               <Subcategory text='Iphone'/>
+               <Subcategory text='Xioami'/>
+               <Subcategory text='vivo'/>
+               <Subcategory text='Itel'/>
+               </>
+               }
+              <Category text='Desktop' type='false'/>
+               {
+                category &&
+                
+               <>
+               <Subcategory text='Dell'/>
+               <Subcategory text='HP'/>
+               <Subcategory text='Asus'/>
+               <Subcategory text='Lenevo'/>
+               </>
+               }
+              <Category text='Watch' type='true'/>
+               {
+                category &&
+                
+               <>
+               <Subcategory text='Dell'/>
+               <Subcategory text='HP'/>
+               <Subcategory text='Asus'/>
+               <Subcategory text='Lenevo'/>
+               </>
                }
 
 
