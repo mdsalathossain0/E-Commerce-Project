@@ -5,8 +5,22 @@ import Image from './Image'
 import Flex from './Flex'
 import { FaHeart, FaShoppingCart } from 'react-icons/fa'
 import { FaCodeCompare } from 'react-icons/fa6'
+import { useDispatch } from 'react-redux'
+import { cartItem } from '../slice/addtocard'
 
 const Cart = ({title, price, color, image}) => {
+
+  let dispatch = useDispatch()
+
+  let addToCart=()=>{
+    dispatch(cartItem({
+      title:title,
+      price:price,
+      image:image,
+      quantity:1
+    }))
+  }
+
   return (
     
         <div className='w-[370px]   relative group '>
@@ -23,7 +37,7 @@ const Cart = ({title, price, color, image}) => {
                 </p>
                 <p className='text-base text-fivth font-normal font-san hover:font-bold hover:text-second duration-300'>Compare <FaCodeCompare className='text-second ml-4 inline'/>
                 </p>
-                <p className='text-base text-fivth font-normal font-san hover:font-bold hover:text-second duration-300'>Add to Cart <FaShoppingCart className='text-second ml-4 inline'/>
+                <p onClick={addToCart} className='text-base text-fivth font-normal font-san hover:font-bold hover:text-second duration-300'>Add to Cart <FaShoppingCart className='text-second ml-4 inline'/>
                 </p>
               </Flex>
 
