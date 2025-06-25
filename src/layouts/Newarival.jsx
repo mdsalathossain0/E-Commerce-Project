@@ -31,28 +31,28 @@ const Newarival = () => {
                 
             <Slider {...settings}>
              <div>
-               <Cart image={Cart1} title='Product one' price='$44.00' color='black'/>
+               <Cart image={Cart1} title='Product one' price='44.00' color='black'/>
              </div>
              <div>
-               <Cart image={Cart2} title='Product two' price='$44.00' color='black'/>
+               <Cart image={Cart2} title='Product two' price='34.00' color='black'/>
              </div>
              <div>
-               <Cart image={Cart3} title='Product three' price='$44.00' color='black'/>
+               <Cart image={Cart3} title='Product three' price='24.00' color='black'/>
              </div>
              <div>
-               <Cart image={Cart4} title='Product four' price='$44.00' color='black'/>
+               <Cart image={Cart4} title='Product four' price='42.00' color='black'/>
              </div>
              <div>
-               <Cart image={Cart1} title='Product five' price='$44.00' color='black'/>
+               <Cart image={Cart1} title='Product five' price='14.00' color='black'/>
              </div>
              <div>
-               <Cart image={Cart2} title='Product six' price='$44.00' color='black'/>
+               <Cart image={Cart2} title='Product six' price='24.00' color='black'/>
              </div>
              <div>
-               <Cart image={Cart3} title='Product one' price='$44.00' color='black'/>
+               <Cart image={Cart3} title='Product one' price='34.00' color='black'/>
              </div>
              <div>
-               <Cart image={Cart4} title='Product one' price='$44.00' color='black'/>
+               <Cart image={Cart4} title='Product one' price='17.00' color='black'/>
              </div>
 
             </Slider>

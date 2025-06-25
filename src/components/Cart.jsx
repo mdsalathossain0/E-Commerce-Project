@@ -27,7 +27,7 @@ const Cart = ({title, price, color, image}) => {
             <Image className='w-full h-[370px]' src={image}/>
             <Flex className='justify-between items-center'>
                 <h5 className='text-xl text-second font-bold font-san pt-6 pb-4'>{title}</h5>
-                <h6 className='text-base text-fivth font-normal font-san leading-7'>{price}</h6>
+                <h6 className='text-base text-fivth font-normal font-san leading-7'>${price}</h6>
             </Flex>
             <h6 className='text-base text-fivth font-normal font-san leading-7'>{color}</h6>
             <button className='text-sm text-white font-bold font-san bg-second py-2 px-8 absolute top-5 left-5'>New</button>
