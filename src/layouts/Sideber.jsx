@@ -40,7 +40,7 @@ useEffect(()=>{
         total+=item.price*item.quantity
     })
     setTotal(total)
-})
+},[data])
 
   return (
     <section className='bg-third py-6'>
@@ -70,7 +70,7 @@ useEffect(()=>{
                         <FaShoppingCart onClick={()=>(setShow(!show))} className='text-base text-first'/> 
                     </Flex>
                     {
-                        show && <div className='w-1/3 h-[800px] bg-black absolute top-0 right-0 z-10'>
+                        show && <div className='w-1/3 h-[730px] bg-black absolute top-0 right-0 z-10'>
                             <RxCross2 onClick={()=>(setShow(!show))} className='text-xl font-bold text-white m-5'/>
                             <ul className='flex justify-between text-white font-bold border border-white py-2 px-6'>
                                 <li>Action:</li>
