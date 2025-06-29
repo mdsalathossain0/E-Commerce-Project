@@ -84,6 +84,8 @@ useEffect(()=>{
                                 ?
                                 
                                 data.map(item =>(
+                                    
+
                                     <>
                                         <ul className='relative flex justify-between  text-white border border-white py-2 px-6 cursor-pointer'>
                                         <li onClick={()=>handleRemove(item)}><RxCross2 /></li>
