@@ -6,6 +6,7 @@ import Cart from '../components/Cart'
 import Flex from '../components/Flex'
 
 import data from '../Data'
+import axios from 'axios';
 
 
 
@@ -16,7 +17,7 @@ function Items({ currentItems }) {
         {currentItems &&
         currentItems.map((item) => (
           <div>
-            <Cart image={Cart1} title='Basic Crew Neck Tee' price='$44.00' color='black'/>
+            <Cart image={item.thumbnail} title={item.title} price={item.price} color='black' offer='New'/>
           </div>
         ))}
       </Flex>
@@ -26,17 +27,27 @@ function Items({ currentItems }) {
 
 function Paginate({ itemsPerPage }) {
 
+  let [allitem, setAllitem]=useState([])
+    useEffect(()=>{
+     async function allData(){
+  
+        let data =await axios.get('https://dummyjson.com/products')
+        setAllitem(data.data.products)
+      }
+      allData()
+    },[])
+
   const [itemOffset, setItemOffset] = useState(0);
 
 
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = data.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(data.length / itemsPerPage);
+  const currentItems = allitem.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(allitem.length / itemsPerPage);
 
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % data.length;
+    const newOffset = (event.selected * itemsPerPage) % allitem.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
@@ -59,7 +70,7 @@ function Paginate({ itemsPerPage }) {
         pageLinkClassName=" py-2.5 px-4 text-first font-san text-sm border border-sixth mr-4 hover:bg-second hover:text-white duration-300"
         activeLinkClassName="bg-second text-white"
       />
-      <p className='text-sm text-first font-san leading-7'>Products from {itemOffset + 1} to {endOffset<data.length ? endOffset:data.length} of {data.length}</p>
+      <p className='text-sm text-first font-san leading-7'>Products from {itemOffset + 1} to {endOffset<allitem.length ? endOffset:allitem.length} of {allitem.length}</p>
      </div>
     </>
   );

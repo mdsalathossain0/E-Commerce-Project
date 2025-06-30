@@ -48,7 +48,7 @@ const Newarival = () => {
               {
                 allitem.map(item=>(
                  <div>
-                  <Cart image={item.thumbnail} title={item.title} price={item.price} color='black'/>
+                  <Cart image={item.thumbnail} title={item.title} price={item.price} color='black' offer='New'/>
                  </div>
                 ))
               }

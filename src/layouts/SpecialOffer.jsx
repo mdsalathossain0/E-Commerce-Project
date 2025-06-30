@@ -1,29 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../components/Container'
 import SubHeading from '../components/SubHeading'
 import Flex from '../components/Flex'
 import Cart from '../components/Cart'
 
-import Cart9 from '../assets/cart9.png'
-import Cart10 from '../assets/cart10.png'
-import Cart11 from '../assets/cart11.png'
-import Cart12 from '../assets/cart12.png'
-
-import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
+import axios from 'axios'
 
 const SpecialOffer = () => {
+
+  let [allitem, setAllitem]=useState([])
+  useEffect(()=>{
+   async function allData(){
+
+      let data =await axios.get('https://dummyjson.com/products')
+      setAllitem(data.data.products)
+    }
+    allData()
+  },[])
  
   return (
     <section className='pt-[128px] pb-[140px]'>
         <Container>
         <SubHeading className='pb-12' text='Special Offers'/>
         
-              <Flex className='justify-between'>
-                 <Cart image={Cart9} title='Basic Crew Neck Tee' price='$44.00' color='black'/>
-               <Cart image={Cart10} title='Basic Crew Neck Tee' price='$44.00' color='black'/>
-               <Cart image={Cart11} title='Basic Crew Neck Tee' price='$44.00' color='black'/>
-               <Cart image={Cart12} title='Basic Crew Neck Tee' price='$44.00' color='black'/>
+              <Flex className='gap-x-[45px]'>
+                 {
+                  allitem.map((item,index)=>(
+                    index>=8 && index<=11 &&
+                    <Cart image={item.thumbnail} title={item.title} price={item.price} color='black' offer={item.discountPercentage}/>
+                  ))
+                 }
               </Flex>
              
         </Container>
