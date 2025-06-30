@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../components/Container'
 import SubHeading from '../components/SubHeading'
 import Cart from '../components/Cart'
@@ -13,16 +13,30 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import SampleNextArrow from '../components/SampleNextArrow'
 import SamplePrevArrow from '../components/SamplePrevArrow'
+import axios from 'axios'
 
 const Newarival = () => {
    var settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     nextArrow: <SampleNextArrow/>,
     prevArrow: <SamplePrevArrow/>
   };
+
+  let [allitem, setAllitem]=useState([])
+
+  useEffect(()=>{
+   async function allData() {
+    let data =await axios.get('https://dummyjson.com/products')
+    setAllitem(data.data.products)
+  }
+  allData()
+
+  },[])
+
+ 
   return (
     <section className='pt-[128px] pb-[118px]'>
         <Container>
@@ -30,30 +44,15 @@ const Newarival = () => {
             
                 
             <Slider {...settings}>
-             <div>
-               <Cart image={Cart1} title='Product one' price='44.00' color='black'/>
-             </div>
-             <div>
-               <Cart image={Cart2} title='Product two' price='34.00' color='black'/>
-             </div>
-             <div>
-               <Cart image={Cart3} title='Product three' price='24.00' color='black'/>
-             </div>
-             <div>
-               <Cart image={Cart4} title='Product four' price='42.00' color='black'/>
-             </div>
-             <div>
-               <Cart image={Cart1} title='Product five' price='14.00' color='black'/>
-             </div>
-             <div>
-               <Cart image={Cart2} title='Product six' price='24.00' color='black'/>
-             </div>
-             <div>
-               <Cart image={Cart3} title='Product one' price='34.00' color='black'/>
-             </div>
-             <div>
-               <Cart image={Cart4} title='Product one' price='17.00' color='black'/>
-             </div>
+
+              {
+                allitem.map(item=>(
+                 <div>
+                  <Cart image={item.thumbnail} title={item.title} price={item.price} color='black'/>
+                 </div>
+                ))
+              }
+             
 
             </Slider>
            
