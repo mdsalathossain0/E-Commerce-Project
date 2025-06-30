@@ -43,11 +43,11 @@ const Cart = () => {
      <Flex className='items-center gap-x-2 pb-[136px]'>
       <p className='text-sm text-first font-normal font-san'>Home</p>
       <span className='text-sm text-first font-normal font-san'><IoIosArrowForward /></span>
-      <p className='text-sm text-first font-normal font-san'></p>
+      <p className='text-sm text-first font-normal font-san'>Cart</p>
      </Flex>
      <Flex className='gap-x-[340px] bg-third py-8'>
       <h5 className='text-base text-second font-bold font-san leading-6 pl-5'>Product</h5>
-      <h5 className='text-base text-second font-bold font-san leading-6'>Price</h5>
+      <h5 className='text-base text-second font-bold font-san leading-6 pl-15'>Price</h5>
       <h5 className='text-base text-second font-bold font-san leading-6'>Quantity</h5>
       <h5 className='text-base text-second font-bold font-san leading-6'>Total</h5>
      </Flex>
@@ -58,12 +58,12 @@ const Cart = () => {
         <Flex className='items-center border border-sixth pb-8'>
          
       <div className='flex gap-x-10 pt-8 items-center'>
-        <div onClick={()=>handleRemove(item)} className='pl-5 text-base text-second font-bold font-san leading-6'>x</div>
+        <div onClick={()=>handleRemove(item)} className='w-[15px] pl-5 text-base text-second font-bold font-san leading-6 cursor-pointer'>x</div>
         <div className='w-[100px] h-[100px]'><Image className='w-full h-full' src={item.image}/></div>
-        <div><p className='text-base text-second font-bold font-san leading-6 pr-[100px]'>{item.title}</p></div>
+        <div><p className='w-[250px] text-base text-second font-bold font-san leading-6 pr-20'>{item.title}</p></div>
       </div>
-      <div><h5 className='pt-8 pr-[312px] text-xl text-second font-bold font-san'>${item.price}</h5></div>
-      <div className='flex mr-[270px] gap-x-9 mt-8 px-5 py-3 border border-sixth'>
+      <div><h5 className='w-[100px] pt-8 pr-[312px] text-xl text-second font-bold font-san'>${item.price}</h5></div>
+      <div className='w-[200px] flex ml-10 mr-[230px] gap-x-9 mt-8 px-5 py-3 border border-sixth'>
         <p onClick={()=>handleDecrement(item)}>-</p>
         <p>{item.quantity}</p>
         <p onClick={()=>handleIncrement(item)}>+</p>

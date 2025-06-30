@@ -70,9 +70,9 @@ useEffect(()=>{
                         <FaShoppingCart onClick={()=>(setShow(!show))} className='text-base text-first'/> 
                     </Flex>
                     {
-                        show && <div className='w-1/3 h-[730px] bg-black absolute top-0 right-0 z-10'>
+                        show && <div className='w-1/3 h-[730px] bg-black absolute top-0 right-10 z-10'>
                             <RxCross2 onClick={()=>(setShow(!show))} className='text-xl font-bold text-white m-5'/>
-                            <ul className='flex justify-between text-white font-bold border border-white py-2 px-6'>
+                            <ul className='flex gap-x-12 text-white font-bold border border-white py-2 px-6'>
                                 <li>Action:</li>
                                 <li>Product:</li>
                                 <li>price:</li>
@@ -87,16 +87,16 @@ useEffect(()=>{
                                     
 
                                     <>
-                                        <ul className='relative flex justify-between  text-white border border-white py-2 px-6 cursor-pointer'>
+                                        <ul className='relative flex justify-between items-center  text-white border border-white py-2 px-6 cursor-pointer'>
                                         <li onClick={()=>handleRemove(item)}><RxCross2 /></li>
-                                        <li className='w-[40px] '>{item.title}</li>
-                                        <li className=' w-[30px]'>${item.price}</li>
-                                        <li className='border border-fivth py-2 px-5 flex gap-x-3'>
+                                        <li className='w-[100px] pl-10'>{(item.title).slice(0,5)}...</li>
+                                        <li className=' w-[70px] pl-5'>${item.price}</li>
+                                        <li className='border border-fivth py-1 px-5 flex gap-x-3 my-5 h-[35px] mr-4'>
                                             <span onClick={()=>handleDecrement(item)}>-</span>
                                             <span>{item.quantity}</span>
                                             <span onClick={()=>handleIncrement(item)}>+</span>
                                         </li>
-                                        <li className='w-[20px] '>{item.price*item.quantity}</li>
+                                        <li className='w-[70px] pr-7'>${item.price*item.quantity}</li>
 
                                         </ul>
                                     </>
