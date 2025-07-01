@@ -1,28 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
 import Image from '../components/Image'
 import Button from '../components/Button'
 
-import Productimg1 from '../assets/productdetails1.png'
-import Productimg2 from '../assets/cart12.png'
-import Productimg3 from '../assets/cart11.png'
-import Productimg4 from '../assets/cart10.png'
+
 import { FaStar } from 'react-icons/fa'
 import { MdAdd } from 'react-icons/md'
 import Input from '../components/Input'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
 const ProductsDetails = () => {
+    let [allitem, setAllitem]= useState([])
+
+    let singleProduct = useParams()
+
+    useEffect(()=>{
+       async function allData(){
+            let data =await axios.get('https://dummyjson.com/products')
+            setAllitem(data.data.products)
+        }
+        allData()
+    },[])
+
   return (
     <section>
         <Container>
-            <Flex className='flex-wrap justify-between gap-y-8 pt-[136px] pb-12'>
-                <div className='w-w49'><Image className='w-full' src={Productimg1}/></div>
-                <div className='w-w49'><Image className='w-full' src={Productimg2}/></div>
-                <div className='w-w49'><Image className='w-full' src={Productimg3}/></div>
-                <div className='w-w49'><Image className='w-full' src={Productimg4}/></div>
-    
-            </Flex>
+
+        {
+            allitem.map(item=>{
+                if(item.title===singleProduct.title){
+               
+                }
+            })
+        }
+
+            <h1>{item.title}</h1>
+            
             <h4 className='text-[39px] text-second font-bold font-san'>Product</h4>
             <Flex className='gap-x-6 items-center pt-4 pb-6'>
                 <ul className='flex gap-x-[2px] '>

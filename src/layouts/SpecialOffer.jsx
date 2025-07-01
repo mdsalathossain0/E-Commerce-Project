@@ -28,7 +28,7 @@ const SpecialOffer = () => {
                  {
                   allitem.map((item,index)=>(
                     index>=8 && index<=11 &&
-                    <Cart image={item.thumbnail} title={item.title} price={item.price} color='black' offer={item.discountPercentage}/>
+                    <Cart image={item.thumbnail} title={item.title} price={item.price} color='black' offer={`${item.discountPercentage} %`}/>
                   ))
                  }
               </Flex>
