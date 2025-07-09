@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
 import Button from '../components/Button'
@@ -9,11 +9,16 @@ import { RxCross2 } from 'react-icons/rx';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment, removeItem } from '../slice/addtocard';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 
 const Sideber = () => {
 
+
+let [allitem, setAllitem] = useState([])
+let [search, setSearch] = useState([])
+let [input, setInput] = useState('')
 
 let [total, setTotal]= useState(0)
 
@@ -42,6 +47,21 @@ useEffect(()=>{
     setTotal(total)
 },[data])
 
+useEffect(()=>{
+   async function allData (){
+        let alldata =await axios.get('https://dummyjson.com/products')
+        setAllitem(alldata.data.products)
+    }
+    allData()
+},[])
+
+let handleChange=(e)=>{
+
+  setInput(e.target.value)
+  let search =  allitem.filter(item => item.title.toLowerCase().includes(e.target.value.toLowerCase()))
+  setSearch(search)
+}
+
   return (
     <section className='bg-third py-6'>
         <Container>
@@ -54,9 +74,20 @@ useEffect(()=>{
                 </div>
                 <div className='w-5/12'>
                     <div className='relative'>
-                        <input className='w-full bg-white py-4 pl-5 pr-16 placeholder:text-sm placeholder:text-[#C4C4C4] ' type="text" placeholder='Search Products...'/>
+                        <input onChange={handleChange} className='w-full bg-white py-4 pl-5 pr-16 placeholder:text-sm placeholder:text-[#C4C4C4] ' type="text" placeholder='Search Products...'/>
                         <IoSearchSharp className='absolute top-1/2 -translate-y-1/2 right-5 text-base text-second'/>
+                    {
+                        search.length>0 &&
+                        input.length>0 &&
+                        <div className='w-full bg-white border border-black absolute top-[100x] left-0 z-10'>
+                            {
+                                search.map(item=>(
+                                    <Link to='/productdetails/:title'><p className='text-sm text-second font-normal font-san cursor-pointer'>{item.title}</p></Link>
 
+                                ))
+                            }
+                        </div>
+                    }
                     </div>
                 </div>
                 <div className='w-3/12'>
@@ -106,7 +137,7 @@ useEffect(()=>{
                                 :
                                 <h1 className='text-2xl text-white font-semibold flex items-center justify-center pt-30'>Cart is Empty</h1>
                             }
-                            <span className='text-2xl text-white font-semibold absolute bottom-5 right-5'>Total: {total}</span>
+                            <span className='text-2xl text-white font-semibold absolute bottom-5 right-5'>Total: ${total}</span>
                               <div className='flex gap-x-5 pt-20 justify-center'>
                                 <Link to='/cart'><Button className='!text-black !bg-white Hover hover:!bg-transparent hover:!text-white hover:border-white' text='View cart'/></Link>
                                 <Link to='/checkout'><Button className='!text-black !bg-white Hover hover:!bg-transparent hover:!text-white hover:border-white' text='Checkout'/></Link>

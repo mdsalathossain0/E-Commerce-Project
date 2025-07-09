@@ -42,7 +42,7 @@ const Banner = () => {
          <Image className='w-full h-full' src={Bannerimg2}/>
          </div>
           <div className='h-[600px]'>
-         <Image className='w-full h-full' src={Bannerimg3}/> h-full
+         <Image className='w-full h-full' src={Bannerimg3}/>
          </div>
         
         

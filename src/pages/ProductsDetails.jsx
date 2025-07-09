@@ -11,23 +11,12 @@ import Input from '../components/Input'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { RxCross2 } from 'react-icons/rx'
-import { useDispatch, useSelector } from 'react-redux'
-import { cartItem } from '../slice/addtocard'
+
 
 const ProductsDetails = () => {
 
-    let dispatch = useDispatch()
-
-    let addToCard=()=>{
-        dispatch(cartItem({
-            title:title,
-            price:price,
-            image:src,
-            quantity:1
-        }))
-    }
-
     let [detail, setDetail]=useState(false)
+    let [detail2, setDetail2]=useState(false)
 
     let [ show, setShow]=useState(false)
     let [ show2, setShow2]=useState(true)
@@ -43,13 +32,17 @@ const ProductsDetails = () => {
     let handleDetails=()=>{
         setDetail(!detail)
     }
+    let handleDetails1=()=>{
+        setDetail2(!detail2)
+        
+    }
     let [allitem, setAllitem]= useState([])
 
     let singleProduct = useParams()
 
     useEffect(()=>{
        async function allData(){
-            let data =await axios.get('https://dummyjson.com/products')
+            let data = await axios.get('https://dummyjson.com/products')
             setAllitem(data.data.products)
         }
         allData()
@@ -118,7 +111,7 @@ const ProductsDetails = () => {
             </Flex>
             <Flex className='gap-x-5 pt-7 pb-7 border-b-3 border-sixth w-[49%]'>
                 <Button text='Add to Wish List'/>
-                <div onClick={addToCard}><Button text='Add to Cart'/></div>
+                <div><Button text='Add to Cart'/></div>
             </Flex>
             <div className='border-b-3 border-sixth w-[49%] pb-5'>
                 <Flex className='justify-between  gap-x-7 items-center pt-14 pb-7  '>
@@ -140,10 +133,10 @@ const ProductsDetails = () => {
             <div className='border-b-3 border-sixth w-[49%] pb-5'>
                 <Flex className='justify-between  gap-x-7 items-center pt-14 pb-7 '>
                 <h4 className='text-base text-second font-bold font-san leading-6'>SHIPPING & RETURNS</h4>
-                <div onClick={handleDetails}>{detail ? <RxCross2 className='text-xl text-second font-bold'/>:<MdAdd  className='text-xl text-second font-bold'/> }</div>
+                <div onClick={handleDetails1}>{detail2 ? <RxCross2 className='text-xl text-second font-bold'/>:<MdAdd  className='text-xl text-second font-bold'/> }</div>
             </Flex>
              {
-                detail && 
+                detail2 && 
                 <>
                 <ul className='flex flex-col gap-y-5'>
                         <li className='list-none'>ShippingInformation: {item.shippingInformation}</li>
