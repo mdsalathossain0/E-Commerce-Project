@@ -79,7 +79,7 @@ let handleChange=(e)=>{
                     {
                         search.length>0 &&
                         input.length>0 &&
-                        <div className='w-full bg-white border border-black absolute top-[100x] left-0 z-10'>
+                        <div className='w-full bg-white border border-black absolute top-[60px] left-0 z-10'>
                             {
                                 search.map(item=>(
                                     <Link to='/productdetails/:title'><p className='text-sm text-second font-normal font-san cursor-pointer'>{item.title}</p></Link>
