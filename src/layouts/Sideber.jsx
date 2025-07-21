@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment, removeItem } from '../slice/addtocard';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Image from '../components/Image';
 
 
 
@@ -17,8 +18,9 @@ const Sideber = () => {
 
 
 let [allitem, setAllitem] = useState([])
-let [search, setSearch] = useState([])
+let [find, setFind] = useState([])
 let [input, setInput] = useState('')
+
 
 let [total, setTotal]= useState(0)
 
@@ -48,18 +50,17 @@ useEffect(()=>{
 },[data])
 
 useEffect(()=>{
-   async function allData (){
-        let alldata =await axios.get('https://dummyjson.com/products')
-        setAllitem(alldata.data.products)
+   async function allData() {
+        let data =await axios.get('https://dummyjson.com/products')
+        setAllitem(data.data.products)
     }
     allData()
-},[])
+})
 
-let handleChange=(e)=>{
-
-  setInput(e.target.value)
-  let search =  allitem.filter(item => item.title.toLowerCase().includes(e.target.value.toLowerCase()))
-  setSearch(search)
+let handleChange = (e)=>{
+    setInput(e.target.value)
+  let search =  allitem.filter(item=>item.title.toLowerCase().includes(e.target.value.toLowerCase()))
+  setFind(search)
 }
 
   return (
@@ -76,18 +77,18 @@ let handleChange=(e)=>{
                     <div className='relative'>
                         <input onChange={handleChange} className='w-full bg-white py-4 pl-5 pr-16 placeholder:text-sm placeholder:text-[#C4C4C4] ' type="text" placeholder='Search Products...'/>
                         <IoSearchSharp className='absolute top-1/2 -translate-y-1/2 right-5 text-base text-second'/>
-                    {
-                        search.length>0 &&
-                        input.length>0 &&
-                        <div className='w-full bg-white border border-black absolute top-[60px] left-0 z-10'>
-                            {
-                                search.map(item=>(
-                                    <Link to='/productdetails/:title'><p className='text-sm text-second font-normal font-san cursor-pointer'>{item.title}</p></Link>
-
-                                ))
-                            }
-                        </div>
-                    }
+                     {
+                        find.length > 0 &&
+                        input.length>0 && 
+                        <div className='w-full bg-white py-5 px-4 absolute top-[62px] left-0 border border-second'>
+                        {
+                            find.map(item=>(
+                                <Link to='/shop'><div className='flex gap-x-5 items-center py-3 border-b border-first cursor-pointer'><Image className='w-[40px]' src={item.thumbnail}/> {item.title}</div></Link>
+                    
+                            ))
+                        }
+                     </div>
+                     }
                     </div>
                 </div>
                 <div className='w-3/12'>
