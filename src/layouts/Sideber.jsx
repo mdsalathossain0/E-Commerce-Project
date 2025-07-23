@@ -43,7 +43,7 @@ let handleRemove=(item)=>{
 
 useEffect(()=>{
     let total = 0
-    data.map(item=>{
+   data && data.map(item=>{
         total+=item.price*item.quantity
     })
     setTotal(total)
