@@ -80,7 +80,7 @@ let handleChange = (e)=>{
                      {
                         find.length > 0 &&
                         input.length>0 && 
-                        <div className='w-full bg-white py-5 px-4 absolute top-[62px] left-0 border border-second'>
+                        <div className='w-full bg-white py-5 px-4 absolute top-[62px] left-0 border border-second z-10'>
                         {
                             find.map(item=>(
                                 <Link to='/shop'><div className='flex gap-x-5 items-center py-3 border-b border-first cursor-pointer'><Image className='w-[40px]' src={item.thumbnail}/> {item.title}</div></Link>

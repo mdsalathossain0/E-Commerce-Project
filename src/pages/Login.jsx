@@ -18,11 +18,15 @@ const Login = () => {
      </Flex>
      <p className='w-[644px] text-base text-first font-normal font-san leading-7 pb-10 '>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p> <hr className='text-sixth'/>
      <h4 className=' text-[39px] text-second font-bold font-san pt-15'>Returning Customer</h4>
-     <Flex className='w-w49 gap-x-5'>
-      <Input className='w-[400px]' text='Email Address' type='email' check='email' placeholder=
-      'company@domain.com'/>
-      <Input className='w-[400px]' text='Password' type='password' check='password' placeholder=
-      '******'/>
+     <Flex className=' gap-x-5 pt-10'>
+       <Flex className='flex-col'>
+            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="email">Email</label>
+            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='email' id='email'  />
+          </Flex>
+       <Flex className='flex-col'>
+            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="password"> Password</label>
+            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password'  />
+          </Flex>
      </Flex>
      <div className='pt-6 pb-8 border-b-2 border-sixth'>
       <Button text='Log in'/>
