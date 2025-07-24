@@ -1,14 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Container from '../components/Container'
 import Flex from '../components/Flex'
 import SubHeading from '../components/SubHeading'
 import Input from '../components/Input'
 import { IoIosArrowForward } from 'react-icons/io'
 import Button from '../components/Button'
+import { toast, ToastContainer } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+  const auth = getAuth();
+  let [email, setEmail] = useState('')
+  let [password, setPassword] = useState('')
+  let [message, setMessage]=useState(false)
+  let [message1, setMessage1]=useState(false)
+  let navigate=useNavigate()
+
+  let handleEmail = (e) => {
+    setEmail(e.target.value)
+  }
+
+  let handlePassword = (e) => {
+    setPassword(e.target.value)
+  }
+
+  let handleLogin = () => {
+    if(!email){
+      setMessage(true)
+      setMessage1(false)
+    }else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+      setMessage(true)
+      setMessage1(false)
+    }
+    else if(!password){
+      setMessage1(true)
+      setMessage(false)
+    }
+    else{
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        toast.success("Registration Done")
+        setTimeout(()=>{
+          navigate('/login')
+        },2000)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+
+      });
+    }
+  }
+
   return (
     <section className='py-26'>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        
+      />
       <Container>
         <SubHeading text='Sign up' />
         <Flex className='items-center gap-x-2 pb-[136px]'>
@@ -34,14 +92,19 @@ const Signup = () => {
         </Flex>
 
         <Flex className='pt-5 gap-x-5 pb-5'>
+          {/* Email */}
           <Flex className='flex-col'>
-            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="email">Enter Email</label>
-            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='enail' id='last' placeholder=
+            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="email"> Email</label>
+            <input onChange={handleEmail} className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='email' id='email' placeholder=
               'Company@gmail.com' />
+              {
+                message && <p className='text-red-500 text-base'>*Please Enter Valid Email</p>
+              }
           </Flex>
+          {/* Email */}
           <Flex className='flex-col'>
-            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="password">Enter Password</label>
-            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password'  />
+            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="phone">Telephone</label>
+            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='number' id='phone' />
           </Flex>
         </Flex><hr className='text-sixth' />
         <h4 className=' text-[39px] text-second font-bold font-san pt-15 pb-10'>New Customer</h4>
@@ -65,13 +128,16 @@ const Signup = () => {
         </Flex><hr className='text-sixth' />
         <h4 className=' text-[39px] text-second font-bold font-san pt-15 pb-10'>Your Password</h4>
         <Flex className=' gap-x-5 pb-10'>
-           <Flex className='flex-col'>
+          <Flex className='flex-col'>
             <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="password"> Password</label>
-            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password'  />
+            <input onChange={handlePassword} className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password' />
+            {
+              message1 && <p className='text-red-500 text-base'>*Please Enter Password</p>
+            }
           </Flex>
-           <Flex className='flex-col'>
+          <Flex className='flex-col'>
             <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="password1">Repeat Password</label>
-            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password1'  />
+            <input onChange={handlePassword} className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password1' />
           </Flex>
         </Flex><hr className='text-sixth' />
 
@@ -92,7 +158,7 @@ const Signup = () => {
           </div>
         </Flex>
 
-        <Button text='Log in' />
+        <div onClick={handleLogin}><Button text='Log in' /></div>
       </Container>
     </section>
   )
