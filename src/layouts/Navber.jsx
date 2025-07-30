@@ -24,7 +24,7 @@ const Navber = () => {
   return (
    <>
     {/*  dekstop  */}
-    <nav className='py-8 hidden lg:block'>
+    <nav className='py-8 hidden lg:block px-5'>
         <Container>
             <Flex>
                 <div className='w-5/12'>

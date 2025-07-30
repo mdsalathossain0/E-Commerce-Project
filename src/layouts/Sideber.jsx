@@ -64,7 +64,7 @@ let handleChange = (e)=>{
 }
 
   return (
-    <section className='bg-third py-3 lg:py-6 px-5 lg:px-0'>
+    <section className='bg-third py-3 lg:py-6 px-5 '>
         <Container>
             <Flex className='items-center'>
                 <div className='w-4/12'>

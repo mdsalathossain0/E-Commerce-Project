@@ -10,7 +10,7 @@ import FacelityThree from '../assets/facelity3.png'
 
 const Facelity = () => {
   return (
-    <div className='py-3.5 md:py-4.5 lg:py-[22px]  border-b-3 border-[#F0F0F0] px-5 lg:px-0'>
+    <div className='py-3.5 md:py-4.5 lg:py-[22px]  border-b-3 border-[#F0F0F0] px-5 '>
         <Container>
         <Flex className='gap-x-2 md:gap-x-2 justify-between'>
             <div>

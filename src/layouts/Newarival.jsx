@@ -38,7 +38,7 @@ const Newarival = () => {
 
  
   return (
-    <section className='pt-[128px] pb-[118px]'>
+    <section className='pt-15 lg:pt-[128px] pb-15 lg:pb-[118px]'>
         <Container>
             <SubHeading className='pb-12' text='New Arrivals'/>
             
