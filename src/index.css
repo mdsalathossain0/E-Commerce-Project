@@ -23,6 +23,20 @@
     transform: translateY(-50%);
     left: 150px;
   }
+  @media(min-width:320px) and (max-width:767.99px){
+  .slick-dots{
+  
+    left: 20px;
+  }
+}
+  @media(min-width:768px) and (max-width:1023px){
+  .slick-dots{
+  
+    left: 20px;
+  }
+
+}
+
   .slick-dots ul li div{
     font-size: 16px;
     color: transparent;

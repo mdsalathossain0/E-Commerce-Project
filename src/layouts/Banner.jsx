@@ -24,24 +24,54 @@ const Banner = () => {
       <div>
         0{i + 1}
       </div>
-    )
+    ),
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
+  
   return (
     
     <section>
         
       <Slider {...settings}>
         
-          <div className='h-[600px]'>
+          <div className='w-full h-[260px] md:h-[380px] lg:h-[600px]'>
          <Image className='w-full h-full' src={Bannerimg}/>
          </div>
-          <div className='h-[600px]'>
+          <div className='w-full h-[260px] md:h-[380px] lg:h-[600px]'>
          <Image className='w-full h-full' src={Bannerimg1}/>
          </div>
-          <div className='h-[600px]'>
+          <div className='w-full h-[260px] md:h-[380px] lg:h-[600px]'>
          <Image className='w-full h-full' src={Bannerimg2}/>
          </div>
-          <div className='h-[600px]'>
+          <div className='w-full h-[260px] md:h-[380px] lg:h-[600px]'>
          <Image className='w-full h-full' src={Bannerimg3}/>
          </div>
         
