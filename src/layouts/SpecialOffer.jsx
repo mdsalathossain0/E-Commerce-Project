@@ -24,7 +24,7 @@ const SpecialOffer = () => {
         <Container>
         <SubHeading className='pb-12' text='Special Offers'/>
         
-              <Flex className='gap-x-[45px]'>
+              <Flex className='gap-[15px] flex-wrap'>
                  {
                   allitem.map((item,index)=>(
                     index>=8 && index<=11 &&

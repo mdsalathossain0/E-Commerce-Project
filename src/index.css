@@ -48,3 +48,11 @@
     color: black;
     border-right: 3px solid black;
   }
+
+  #newarival .slick-list{
+    height: 500px;
+  }
+
+  #newarival .slick-slide{
+    margin: 0 15px;
+  }

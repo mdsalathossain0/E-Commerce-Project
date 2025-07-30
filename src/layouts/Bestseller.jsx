@@ -25,7 +25,7 @@ const Bestseller = () => {
     <section className='pt-[128px] pb-[130px]'>
         <Container>
             <SubHeading className='pb-12' text='Our Bestsellers'/>
-            <Flex className='gap-x-[45px]'>
+            <Flex className='gap-[15px] flex-wrap lg:flex-row'>
               
                {
                 allitem.map((item ,index)=>(

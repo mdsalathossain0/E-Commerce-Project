@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className='bg-third py-14'>
         <Container>
-            <Flex>
+            <Flex className='flex-col lg:flex-row'>
                 <div className='w-2/12'>
                 <h6 className='text-base text-second font-bold font-san leading-6 pb-4'>MENU</h6>
                  <Flex className='flex-col gap-y-[6px]'>
