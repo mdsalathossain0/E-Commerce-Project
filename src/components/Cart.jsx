@@ -14,6 +14,7 @@ const Cart = ({title, price, color, image, offer}) => {
   let dispatch = useDispatch()
 
   let addToCart=()=>{
+    console.log("ok")
     dispatch(cartItem({
       title:title,
       price:price,
@@ -45,7 +46,7 @@ const Cart = ({title, price, color, image, offer}) => {
               </Flex>
 
             </div>
-            <div onClick={addToCart} className='bg-second  mt-3 text-center mx-8 py-2 lg:hidden'><p  className='lg:hidden  text-base text-white font-normal font-san '>Add to Cart <FaShoppingCart className='text-second ml-4 inline'/>
+            <div onClick={addToCart} className='bg-second  mt-3 text-center mx-8 py-2 lg:hidden cursor-pointer'><p  className='lg:hidden  text-base text-white font-normal font-san '>Add to Cart <FaShoppingCart className='text-second ml-4 inline'/>
                 </p></div>
         </div>
 
