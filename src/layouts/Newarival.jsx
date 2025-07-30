@@ -14,8 +14,8 @@ const Newarival = () => {
    var settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow/>,
 
@@ -23,8 +23,8 @@ const Newarival = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           infinite: true,
         }
       },
@@ -60,7 +60,7 @@ const Newarival = () => {
 
  
   return (
-    <section id='newarival' className='pt-10 lg:pt-[80px] pb-8 lg:pb-[80px] '>
+    <section id='newarival' className='pt-10 lg:pt-[80px] pb-8 lg:pb-[80px] px-5'>
         <Container>
             <SubHeading className='pb-12' text='New Arrivals'/>
             

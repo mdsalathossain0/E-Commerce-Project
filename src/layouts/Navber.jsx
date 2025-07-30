@@ -37,10 +37,7 @@ const Navber = () => {
                         <Link onClick={()=>handleClick("About")} to='/about'><List text='About'/></Link>
                         <Link onClick={()=>handleClick("Contact")} to='/contact'><List text='Contacts'/></Link>
                         <Link onClick={()=>handleClick("Journal")} to='/journal'><List text='Journal'/></Link>
-                        
-                        
-                        
-                        
+
                     </Flex>
                 </div>
             </Flex>

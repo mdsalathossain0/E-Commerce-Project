@@ -55,5 +55,18 @@
   }
 
   #newarival .slick-slide{
-    margin: 0 15px;
+    width: 370px !important;
+    margin-right: 15px;
+  }
+  @media(min-width:320px) and (max-width:767.99px){
+    #newarival .slick-slide{
+    width: 340px !important;
+    margin-right: 20px;
+  }
+  }
+  @media(min-width:768px) and (max-width:1023px){
+    #newarival .slick-slide{
+    width: 330px !important;
+    margin-right: 15px;
+  }
   }
