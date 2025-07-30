@@ -64,19 +64,19 @@ let handleChange = (e)=>{
 }
 
   return (
-    <section className='bg-third py-6'>
+    <section className='bg-third py-3 lg:py-6 px-5 lg:px-0'>
         <Container>
             <Flex className='items-center'>
                 <div className='w-4/12'>
                     <Flex className='gap-x-3 items-center'>
-                    <IoReorderTwo className='text-lg text-second'/>
-                    <p className='text-sm text-second font-normal font-san'>Shop by Category</p>
+                    <IoReorderTwo className='text-sm md:text-base lg:text-lg text-second'/>
+                    <p className='text-xs md:text-sm lg:text-sm text-second font-normal font-san'>Shop by Category</p>
                     </Flex>
                 </div>
                 <div className='w-5/12'>
                     <div className='relative'>
-                        <input onChange={handleChange} className='w-full bg-white py-4 pl-5 pr-16 placeholder:text-sm placeholder:text-[#C4C4C4] ' type="text" placeholder='Search Products...'/>
-                        <IoSearchSharp className='absolute top-1/2 -translate-y-1/2 right-5 text-base text-second'/>
+                        <input onChange={handleChange} className='w-full bg-white py-2 lg:py-4 pl-5 pr-16 placeholder:text-sm placeholder:text-[#C4C4C4] ' type="text" placeholder='Search Products...'/>
+                        <IoSearchSharp className='absolute top-1/2 -translate-y-1/2 right-3 lg:right-5 text-xs md:sm lg:text-base text-second'/>
                      {
                         find.length > 0 &&
                         input.length>0 && 
@@ -92,14 +92,14 @@ let handleChange = (e)=>{
                     </div>
                 </div>
                 <div className='w-3/12'>
-                    <Flex className='gap-x-10 justify-end'>
+                    <Flex className='gap-x-3 lg:gap-x-10 justify-end'>
                         <div>
                             <Flex className='gap-x-2'>
-                                <div><FaUser className='text-base text-first'/> </div>
-                                <div><IoMdArrowDropdown className='text-base text-first'/> </div>
+                                <div><FaUser className='text-xs md:text-sm lg:text-base text-first'/> </div>
+                                <div><IoMdArrowDropdown className='text-xs md:text-sm lg:text-base text-first'/> </div>
                             </Flex>
                         </div>
-                        <FaShoppingCart onClick={()=>(setShow(!show))} className='text-base text-first'/> 
+                        <FaShoppingCart onClick={()=>(setShow(!show))} className='text-xs md:text-sm lg:text-base text-first'/> 
                     </Flex>
                     {
                         show && <div className='w-1/3 h-[730px] bg-black absolute top-0 right-10 z-10'>
