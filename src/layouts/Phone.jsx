@@ -6,7 +6,7 @@ import Phoneimg from '../assets/phone.png'
 
 const Phone = () => {
   return (
-    <section>
+    <section className='px-5'>
         <Container>
             <div>
                 <Image src={Phoneimg}/>

@@ -20,11 +20,11 @@ const SpecialOffer = () => {
   },[])
  
   return (
-    <section className='pt-[128px] pb-[140px]'>
+    <section className='pt-8 lg:pt-[80px] pb-8 lg:pb-[80px] px-5'>
         <Container>
         <SubHeading className='pb-12' text='Special Offers'/>
         
-              <Flex className='gap-[15px] flex-wrap'>
+              <Flex className='gap-[15px] flex-wrap justify-center lg:flex-nowrap'>
                  {
                   allitem.map((item,index)=>(
                     index>=8 && index<=11 &&

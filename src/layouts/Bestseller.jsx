@@ -22,10 +22,10 @@ const Bestseller = () => {
   
   
   return (
-    <section className='pt-[128px] pb-[130px]'>
+    <section className='pt-8 lg:pt-[80px] pb-8 lg:pb-[80px] px-5'>
         <Container>
             <SubHeading className='pb-12' text='Our Bestsellers'/>
-            <Flex className='gap-[15px] flex-wrap lg:flex-row'>
+            <Flex className='gap-[15px] flex-wrap justify-center lg:flex-nowrap'>
               
                {
                 allitem.map((item ,index)=>(
