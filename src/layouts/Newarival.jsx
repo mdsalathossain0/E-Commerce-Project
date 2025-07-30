@@ -4,11 +4,6 @@ import SubHeading from '../components/SubHeading'
 import Cart from '../components/Cart'
 
 
-import Cart1 from '../assets/cart1.png'
-import Cart2 from '../assets/cart2.png'
-import Cart3 from '../assets/cart3.png'
-import Cart4 from '../assets/cart4.png'
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import SampleNextArrow from '../components/SampleNextArrow'
@@ -22,7 +17,35 @@ const Newarival = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     nextArrow: <SampleNextArrow/>,
-    prevArrow: <SamplePrevArrow/>
+    prevArrow: <SamplePrevArrow/>,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+
   };
 
   let [allitem, setAllitem]=useState([])
@@ -38,12 +61,12 @@ const Newarival = () => {
 
  
   return (
-    <section className='pt-15 lg:pt-[128px] pb-15 lg:pb-[118px]'>
+    <section className='pt-10 lg:pt-[80px] pb-8 lg:pb-[80px] px-5'>
         <Container>
             <SubHeading className='pb-12' text='New Arrivals'/>
             
                 
-            <Slider {...settings}>
+            <Slider {...settings } className='max-w-full overflow-hidden'>
 
               {
                 allitem.map(item=>(

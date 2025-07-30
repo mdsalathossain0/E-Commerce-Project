@@ -24,17 +24,17 @@ const Cart = ({title, price, color, image, offer}) => {
 
   return (
     
-        <div className='w-[370px]   relative group border border-sixth px-2 rounded-[6px]'>
-            <Image className='w-full h-[370px]' src={image}/>
+        <div className='w-full sm:w-[300px] md:w-[350px] lg:w-[370px] py-3  relative group border border-sixth px-2 rounded-[6px]'>
+            <Image className='w-full h-[250px] sm:h-[300px] md:h-[340px] lg:h-[370px] object-cover' src={image}/>
             <Link to={`/productdetails/${title}`}>
             <Flex className='justify-between items-center'>
-                <h5 className='text-xl text-second font-bold font-san pt-6 pb-4'>{title}</h5>
-                <h6 className='text-base text-fivth font-normal font-san leading-7'>${price}</h6>
+                <h5 className='text-lg sm:text-xl text-second font-bold font-san pt-4 pb-3'>{title}</h5>
+                <h6 className='text-sm sm:text-base text-fivth font-normal font-san leading-6'>${price}</h6>
             </Flex>
             </Link>
             <h6 className='text-base text-fivth font-normal font-san leading-7'>{color}</h6>
             <button className='text-sm text-white font-bold font-san bg-second py-2 px-8 absolute top-5 left-5'>{offer}</button>
-            <div className='w-full bg-white absolute bottom-[0px] left-0 opacity-0 group-hover:opacity-100 group-hover:bottom-[97px] py-6 px-8 duration-500 '>
+            <div className='w-full bg-white absolute bottom-0 left-0 opacity-0 group-hover:opacity-100 group-hover:bottom-[85px] py-4 px-5 duration-500 '>
               <Flex className='flex-col items-end gap-y-5 '>
                 <p className='text-base text-fivth font-normal font-san hover:font-bold hover:text-second duration-300'>Add to Wish List <FaHeart className='text-second ml-4 inline'/>
                 </p>
