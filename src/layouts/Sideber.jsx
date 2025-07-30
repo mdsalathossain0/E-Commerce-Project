@@ -112,7 +112,7 @@ let handleChange = (e)=>{
                                 <li>Subtotal:</li>
                             </ul>
                             {
-                                data.length>0 
+                               data && data.length>0 
                                 ?
                                 
                                 data.map(item =>(
