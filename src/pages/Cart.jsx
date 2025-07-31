@@ -4,9 +4,7 @@ import Flex from '../components/Flex'
 import SubHeading from '../components/SubHeading'
 import Image from '../components/Image'
 import Button from '../components/Button'
-import { IoIosArrowForward } from 'react-icons/io'
 
-import Cartimg from '../assets/cart12.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrement, increment, removeItem } from '../slice/addtocard'
 
@@ -43,10 +41,8 @@ const Cart = () => {
   <Container>
     <SubHeading text='Cart' />
 
-    {/* Breadcrumb */}
     <p className='text-xs lg:text-sm text-first font-normal font-san pb-15 lg:pb-[136px]'>{prev && current!==prev && current === 'Journal' ? (<Link to={prev== "Home" ?'/':`/${prev}`}>{`${prev} >`}</Link>):null} Cart</p>
 
-    {/* Header Row */}
     <Flex className='hidden md:flex justify-between bg-third py-4 px-4 rounded-md'>
       <h5 className='text-sm lg:text-base text-second font-bold font-san w-1/4'>Product</h5>
       <h5 className='text-sm lg:text-base text-second font-bold font-san w-1/4'>Price</h5>
@@ -54,7 +50,6 @@ const Cart = () => {
       <h5 className='text-sm lg:text-base text-second font-bold font-san w-1/4'>Total</h5>
     </Flex>
 
-    {/* Items */}
     {data.map(item => (
       <Flex key={item.id} className='flex flex-col md:flex-row items-start md:items-center border border-sixth py-5 px-4 gap-4 md:gap-0'>
         <div className='flex items-center gap-4 w-full md:w-1/4'>
@@ -81,7 +76,6 @@ const Cart = () => {
       </Flex>
     ))}
 
-    {/* Coupon and Update */}
     <Flex className='flex-col md:flex-row justify-between items-start md:items-center gap-5 pt-6 pb-7 border border-sixth px-4'>
       <div className='flex gap-3 items-center'>
         <select className='px-4 py-2 border border-sixth' name="Size" id="Size">
@@ -95,7 +89,6 @@ const Cart = () => {
       <h5 className='text-sm text-second font-bold'>Update cart</h5>
     </Flex>
 
-    {/* Cart Totals */}
     <h5 className='text-lg sm:text-xl text-second font-bold text-right pt-10 pb-4'>Cart totals</h5>
 
     <div className='flex justify-end'>
@@ -113,8 +106,6 @@ const Cart = () => {
       </table>
     </div>
     
-
-    {/* Checkout Button */}
     <div className='text-right pt-6'>
       <Button text='Proceed to Checkout' />
     </div>

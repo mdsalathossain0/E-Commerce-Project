@@ -96,7 +96,7 @@ let handleChange = (e)=>{
                     <Flex className='gap-x-3 lg:gap-x-10 justify-end'>
                         <div>
                             <Flex className='gap-x-2'>
-                                <div><FaUser className='text-xs md:text-sm lg:text-base text-first'/> </div>
+                                <div><Link to='/myaccount'><FaUser className='text-xs md:text-sm lg:text-base text-first'/></Link> </div>
                                 <div><IoMdArrowDropdown className='text-xs md:text-sm lg:text-base text-first'/> </div>
                             </Flex>
                         </div>
