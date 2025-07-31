@@ -35,7 +35,7 @@ const About = () => {
       <Button className='absolute bottom-6 left-1/2 -translate-x-1/2' text='Our Stores'/>
       </div>
      </Flex>
-     <p className='text-2xl md:text-[28px] lg:text-[39px] text-second font-normal font-san leading-8 lg-leading-13 pt-12 lg:pt-26 pb-10 lg:pb-23'>Orebi is one of the world’s leading ecommerce brands and is internationally recognized for celebrating the essence of classic Worldwide cool looking style.</p>
+     <p className='text-2xl md:text-[28px] lg:text-[39px] text-second font-normal font-san leading-8 lg:leading-13 pt-12 lg:pt-26 pb-10 lg:pb-23'>Orebi is one of the world’s leading ecommerce brands and is internationally recognized for celebrating the essence of classic Worldwide cool looking style.</p>
      <Flex className='flex-col lg:flex-row justify-center lg:justify-between'>
       <AboutCard title='Our Vision' text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an   printer took a galley of type and scrambled it to make a type specimen book."/>
       <AboutCard title='Our Story' text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic."/>
