@@ -12,12 +12,12 @@ const Offers = () => {
     <section className= 'pt-15 lg:pt-[140px] pb-8 lg:pb-[70px] '>
         <Container>
            <Flex className='justify-between'>
-            <div className='w-[49%] h-[400px]'>
+            <div className='w-[49%] h-[280px]'>
                 <Image className='w-full h-full' src={Offerimg1}/>
             </div>
-            <div className='w-[49%] h-[400px]'>
-                <Image className='w-full h-[200px] pb-2 lg:pb-9' src={Offerimg2}/>
-                <Image className='w-full h-[200px]' src={Offerimg3}/>
+            <div className='w-[49%]' >
+                <Image className='w-full h-[140px] pb-2 lg:pb-9' src={Offerimg2}/>
+                <Image className='w-full h-[140px]' src={Offerimg3}/>
             </div>
            </Flex>
         </Container>

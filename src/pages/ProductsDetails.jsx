@@ -53,7 +53,7 @@ const ProductsDetails = () => {
     },[])
 
   return (
-    <section>
+    <section className='py-15 lg:py-20 px-5'>
         <Container>
             
 

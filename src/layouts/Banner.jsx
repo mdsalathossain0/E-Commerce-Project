@@ -63,16 +63,16 @@ const Banner = () => {
         
       <Slider {...settings}>
         
-          <div className='w-full h-[260px] md:h-[380px] lg:h-[600px]'>
+          <div className='w-full h-[150px] md:h-[380px] lg:h-[600px]'>
          <Image className='w-full h-full' src={Bannerimg}/>
          </div>
-          <div className='w-full h-[260px] md:h-[380px] lg:h-[600px]'>
+          <div className='w-full h-[150px] md:h-[380px] lg:h-[600px]'>
          <Image className='w-full h-full' src={Bannerimg1}/>
          </div>
-          <div className='w-full h-[260px] md:h-[380px] lg:h-[600px]'>
+          <div className='w-full h-[150px] md:h-[380px] lg:h-[600px]'>
          <Image className='w-full h-full' src={Bannerimg2}/>
          </div>
-          <div className='w-full h-[260px] md:h-[380px] lg:h-[600px]'>
+          <div className='w-full h-[150px] md:h-[380px] lg:h-[600px]'>
          <Image className='w-full h-full' src={Bannerimg3}/>
          </div>
         
