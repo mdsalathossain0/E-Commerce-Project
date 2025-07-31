@@ -8,6 +8,7 @@ import { IoIosArrowForward } from 'react-icons/io'
 import Button from '../components/Button'
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Signup = () => {
   const auth = getAuth();
@@ -16,6 +17,9 @@ const Signup = () => {
   let [message, setMessage]=useState(false)
   let [message1, setMessage1]=useState(false)
   let navigate=useNavigate()
+
+  let prev = useSelector((state)=>state.action.prevvalue)
+  let current = useSelector((state)=>state.action.currentvalue)
 
   let handleEmail = (e) => {
     setEmail(e.target.value)
@@ -53,7 +57,7 @@ const Signup = () => {
   }
 
   return (
-    <section className='py-26'>
+    <section className='py-15 lg:py-26 px-5'>
       <ToastContainer
         position="top-center"
         autoClose={5000}
@@ -69,23 +73,21 @@ const Signup = () => {
       />
       <Container>
         <SubHeading text='Sign up' />
-        <Flex className='items-center gap-x-2 pb-[136px]'>
-          <p className='text-sm text-first font-normal font-san'>Home</p>
-          <span className='text-sm text-first font-normal font-san'><IoIosArrowForward /></span>
-          <p className='text-sm text-first font-normal font-san'>Sign up</p>
-        </Flex>
-        <p className='w-[644px] text-base text-first font-normal font-san leading-7 pb-10 '>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p> <hr className='text-sixth' />
-        <h4 className=' text-[39px] text-second font-bold font-san pt-15 pb-10'>Your Personal Details</h4>
+        <p className='text-sm lg:text-base text-first font-normal font-san pb-15 lg:pb-[136px]'>
+        {prev && current!==prev && current === 'Contact' ? (<Link to={prev === "Home" ? "/" : `/${prev}`}>{`${prev} >`}</Link>) :null}
+          Contact</p>
+        <p className='w-full lg:w-[644px] text-sm lg:text-base text-first font-normal font-san leading-7 pb-10 '>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p> <hr className='text-sixth' />
+        <h4 className=' text-2xl md:text-[28px] lg:text-[39px] text-second font-bold font-san pt-8 lg:pt-15 pb-7 lg:pb-10'>Your Personal Details</h4>
 
         <Flex className='gap-x-5'>
           <Flex className='flex-col'>
-            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="first">First Name</label>
-            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='text' id='first' placeholder=
+            <label className='w-[90%] lg:w-[400px] text-sm lg:text-base text-second font-bold font-san leading-6 ' htmlFor="first">First Name</label>
+            <input className=' w-[90%] lg:w-[400px] text-sm lg:text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='text' id='first' placeholder=
               'First Name' />
           </Flex>
           <Flex className='flex-col'>
-            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="last">Last Name</label>
-            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='text' id='last' placeholder=
+            <label className='w-[90%] lg:w-[400px] text-sm lg:text-base text-second font-bold font-san leading-6 ' htmlFor="last">Last Name</label>
+            <input className='w-[90%] lg:w-[400px] text-sm lg:text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='text' id='last' placeholder=
               'Last Name' />
           </Flex>
 
@@ -94,8 +96,8 @@ const Signup = () => {
         <Flex className='pt-5 gap-x-5 pb-5'>
           {/* Email */}
           <Flex className='flex-col'>
-            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="email"> Email</label>
-            <input onChange={handleEmail} className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='email' id='email' placeholder=
+            <label className='w-[90%] lg:w-[400px] text-sm lg:text-base text-second font-bold font-san leading-6 ' htmlFor="email"> Email</label>
+            <input onChange={handleEmail} className='w-[90%] lg:w-[400px] text-sm lg:text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='email' id='email' placeholder=
               'Company@gmail.com' />
               {
                 message && <p className='text-red-500 text-base'>*Please Enter Valid Email</p>
@@ -103,41 +105,41 @@ const Signup = () => {
           </Flex>
           {/* Email */}
           <Flex className='flex-col'>
-            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="phone">Telephone</label>
-            <input className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='number' id='phone' />
+            <label className='w-[90%] lg:w-[400px] text-sm lg:text-base text-second font-bold font-san leading-6 ' htmlFor="phone">Telephone</label>
+            <input className=' w-[90%] lg:w-[400px] text-sm lg:text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='number' id='phone' />
           </Flex>
         </Flex><hr className='text-sixth' />
-        <h4 className=' text-[39px] text-second font-bold font-san pt-15 pb-10'>New Customer</h4>
-        <Flex className='w-w49 gap-x-5'>
-          <Input className='w-[400px]' text='Address 1' type='text' check='address1' placeholder=
+        <h4 className=' text-2xl md:text-[28px] lg:text-[39px] text-second font-bold font-san pt-8 lg:pt-15 pb-7 lg:pb-10'>New Customer</h4>
+        <Flex className='w-full lg:w-w49 gap-x-5'>
+          <Input className='w-full lg:w-[400px]' text='Address 1' type='text' check='address1' placeholder=
             '4279 Zboncak Port Suite 6212' />
-          <Input className='w-[400px]' text='Address 2' type='text' check='address2' placeholder=
+          <Input className='w-full lg:w-[400px]' text='Address 2' type='text' check='address2' placeholder=
             '-' />
         </Flex>
-        <Flex className='w-w49 gap-x-5'>
-          <Input className='w-[400px]' text='City' type='text' check='city' placeholder=
+        <Flex className='w-full lg:w-w49 gap-x-5'>
+          <Input className='w-full lg:w-[400px]' text='City' type='text' check='city' placeholder=
             'Your city' />
-          <Input className='w-[400px]' text='Post Code' type='number' check='post-code' placeholder=
+          <Input className='w-full lg:w-[400px]' text='Post Code' type='number' check='post-code' placeholder=
             '05228' />
         </Flex>
-        <Flex className='w-w49 gap-x-5 pb-10'>
-          <Input className='w-[400px]' text='Country' type='text' check='text' placeholder=
+        <Flex className='w-full lg:w-w49 gap-x-5 pb-10'>
+          <Input className='w-full lg:w-[400px]' text='Country' type='text' check='text' placeholder=
             'Please select' />
-          <Input className='w-[400px]' text='Region/State' type='text' check='last-text' placeholder=
+          <Input className='w-full lg:w-[400px]' text='Region/State' type='text' check='last-text' placeholder=
             'Please select' />
         </Flex><hr className='text-sixth' />
-        <h4 className=' text-[39px] text-second font-bold font-san pt-15 pb-10'>Your Password</h4>
-        <Flex className=' gap-x-5 pb-10'>
+        <h4 className=' text-2xl md:text-[28px] lg:text-[39px] text-second font-bold font-san pt-8 lg:pt-15 pb-7 lg:pb-10'>Your Password</h4>
+        <Flex className='w-full lg:w-w49 gap-x-5 pb-10'>
           <Flex className='flex-col'>
-            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="password"> Password</label>
-            <input onChange={handlePassword} className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password' />
+            <label className='w-[90%] lg:w-[400px] text-sm lg:text-base text-second font-bold font-san leading-6 ' htmlFor="password"> Password</label>
+            <input onChange={handlePassword} className=' w-[90%] lg:w-[400px] text-sm lg:text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password' />
             {
               message1 && <p className='text-red-500 text-base'>*Please Enter Password</p>
             }
           </Flex>
           <Flex className='flex-col'>
-            <label className='w-[400px] text-base text-second font-bold font-san leading-6 ' htmlFor="password1">Repeat Password</label>
-            <input onChange={handlePassword} className=' w-[400px] text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password1' />
+            <label className='w-[90%] lg:w-[400px] text-sm lg:text-base text-second font-bold font-san leading-6 ' htmlFor="password1">Repeat Password</label>
+            <input onChange={handlePassword} className=' w-[90%] lg:w-[400px] text-sm lg:text-base font-normal py-4 px-2 border-b-2 border-sixth placeholder:text-sm placeholder:text-first placeholder:font-normal' type='password' id='password1' />
           </Flex>
         </Flex><hr className='text-sixth' />
 
