@@ -26,7 +26,7 @@ const Cart = ({title, price, color, image, offer}) => {
   return (
     
         <div  className='w-[350px] md:w-[310px] lg:w-[370px] h-[500px]  py-3  relative group border border-sixth px-2 rounded-[6px]'>
-            <Image className='w-full h-[330px] lg:h-[370px] object-cover' src={image}/>
+            <Image className='w-full h-[310px] lg:h-[370px] object-cover' src={image}/>
             <Link to={`/productdetails/${title}`}>
             <Flex className='justify-between items-center'>
                 <h5 className='text-base md:text-lg lg:text-xl text-second font-bold font-san pt-4 pb-3'>{title}</h5>
@@ -35,7 +35,7 @@ const Cart = ({title, price, color, image, offer}) => {
             </Link>
             <h6 className='text-xs md:text-sm lg:text-base text-fivth font-normal font-san leading-7'>{color}</h6>
             <button className='text-sm text-white font-bold font-san bg-second py-2 px-3 md:px-4 lg:px-5 absolute top-5 left-5'>{offer}</button>
-            <div className= 'hidden lg:block w-full bg-white absolute bottom-0 left-0 opacity-0 group-hover:opacity-100 group-hover:bottom-[97px] py-4 px-5 duration-500 '>
+            <div className= 'hidden lg:block w-full bg-white absolute bottom-0 left-0 opacity-0 group-hover:opacity-100 group-hover:bottom-[109px] py-4 px-5 duration-500 '>
               <Flex className='flex-col items-end gap-y-5 '>
                 <p className='text-base text-fivth font-normal font-san hover:font-bold hover:text-second duration-300'>Add to Wish List <FaHeart className='text-second ml-4 inline'/>
                 </p>
@@ -46,7 +46,7 @@ const Cart = ({title, price, color, image, offer}) => {
               </Flex>
 
             </div>
-            <div onClick={addToCart} className='bg-second  mt-3 text-center mx-8 py-2 lg:hidden cursor-pointer'><p  className='lg:hidden  text-base text-white font-normal font-san '>Add to Cart <FaShoppingCart className='text-second ml-4 inline'/>
+            <div onClick={addToCart} className='bg-second text-center my-4 mx-8 py-2 lg:hidden cursor-pointer'><p  className='lg:hidden  text-base text-white font-normal font-san '>Add to Cart <FaShoppingCart className='text-second ml-4 inline'/>
                 </p></div>
         </div>
 

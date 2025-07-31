@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react'
+import React, { use, useEffect, useRef, useState } from 'react'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
 import Button from '../components/Button'
@@ -63,6 +63,7 @@ let handleChange = (e)=>{
   setFind(search)
 }
 
+
   return (
     <section className='bg-third py-3 lg:py-6 px-5 '>
         <Container>
@@ -80,7 +81,7 @@ let handleChange = (e)=>{
                      {
                         find.length > 0 &&
                         input.length>0 && 
-                        <div className='w-full bg-white py-5 px-4 absolute top-[62px] left-0 border border-second z-10'>
+                        <div className='w-[300px] md:w-[500px] lg:w-[550px] bg-white py-5 px-4 absolute top-[47px] lg:top-[62px] -right-15 lg:left-0 border border-second z-10'>
                         {
                             find.map(item=>(
                                 <Link to='/shop'><div className='flex gap-x-5 items-center py-3 border-b border-first cursor-pointer'><Image className='w-[40px]' src={item.thumbnail}/> {item.title}</div></Link>
@@ -102,13 +103,13 @@ let handleChange = (e)=>{
                         <FaShoppingCart onClick={()=>(setShow(!show))} className='text-xs md:text-sm lg:text-base text-first'/> 
                     </Flex>
                     {
-                        show && <div className='w-1/3 h-[730px] bg-black absolute top-0 right-10 z-10'>
+                        show && <div className='w-[250px] md:w-[500px] lg:w-[700px] h-auto bg-black absolute top-0 right-2 lg:right-10 z-10'>
                             <RxCross2 onClick={()=>(setShow(!show))} className='text-xl font-bold text-white m-5'/>
-                            <ul className='flex gap-x-12 text-white font-bold border border-white py-2 px-6'>
-                                <li>Action:</li>
+                            <ul className='flex justify-between md:justify-around lg:justify-around text-sm md:text-base lg:text-lg text-white font-bold border border-white py-2 px-6'>
+                                <li >Action:</li>
                                 <li>Product:</li>
-                                <li>price:</li>
-                                <li>Quantity:</li>
+                                <li className='hidden md:block lg:block'>price:</li>
+                                <li className='hidden md:block lg:block'> Quantity:</li>
                                 <li>Subtotal:</li>
                             </ul>
                             {
@@ -119,16 +120,16 @@ let handleChange = (e)=>{
                                     
 
                                     <>
-                                        <ul className='relative flex justify-between items-center  text-white border border-white py-2 px-6 cursor-pointer'>
+                                        <ul className='relative flex justify-between md:justify-around lg:justify-around items-center text-xs md:text-sm lg:text-base text-white border border-white py-2 px-6 cursor-pointer'>
                                         <li onClick={()=>handleRemove(item)}><RxCross2 /></li>
-                                        <li className='w-[100px] pl-10'>{(item.title).slice(0,5)}...</li>
-                                        <li className=' w-[70px] pl-5'>${item.price}</li>
-                                        <li className='border border-fivth py-1 px-5 flex gap-x-3 my-5 h-[35px] mr-4'>
+                                        <li className='md:w-[140px] lg:w-[140px] pl-10'>{(item.title).slice(0,8)}...</li>
+                                        <li className='md:[70px] lg:w-[70px] hidden md:block lg:block '>${item.price}</li>
+                                        <li className='border border-fivth py-1 px-5 my-5 h-[35px] mr-4 hidden md:block lg:block'>
                                             <span onClick={()=>handleDecrement(item)}>-</span>
-                                            <span>{item.quantity}</span>
+                                            <span className='px-2'>{item.quantity}</span>
                                             <span onClick={()=>handleIncrement(item)}>+</span>
                                         </li>
-                                        <li className='w-[70px] pr-7'>${item.price*item.quantity}</li>
+                                        <li className='md:w-[70px] lg:w-[70px] lg:pr-7'>${item.price*item.quantity}</li>
 
                                         </ul>
                                     </>
@@ -136,13 +137,13 @@ let handleChange = (e)=>{
                                 ))
                                 
                                 :
-                                <h1 className='text-2xl text-white font-semibold flex items-center justify-center pt-30'>Cart is Empty</h1>
+                                <h1 className= 'text-lg md:text-xl lg:text-2xl text-white font-semibold flex items-center justify-center pt-15 md:pt-20 lg:pt-30'>Cart is Empty</h1>
                             }
-                            <span className='text-2xl text-white font-semibold absolute bottom-5 right-5'>Total: ${total}</span>
-                              <div className='flex gap-x-5 pt-20 justify-center'>
-                                <Link to='/cart'><Button className='!text-black !bg-white Hover hover:!bg-transparent hover:!text-white hover:border-white' text='View cart'/></Link>
-                                <Link to='/checkout'><Button className='!text-black !bg-white Hover hover:!bg-transparent hover:!text-white hover:border-white' text='Checkout'/></Link>
+                              <div className='flex gap-x-3 lg:gap-x-5 pt-12 lg:pt-20 pb-12 lg:pb-20 justify-center'>
+                                <Link to='/cart'><button className='text-sm font-bold font-san py-4 px-3 md:px-8 lg:px-10 text-black bg-white border border-transparent hover:bg-transparent hover:text-white hover:border-white'>View cart</button></Link>
+                                <Link to='/checkout'><button className='text-sm font-bold font-san py-4 px-3 md:px-8 lg:px-10 text-black bg-white border border-transparent hover:bg-transparent hover:text-white hover:border-white'>Checkout</button></Link>
                               </div>
+                            <p className='text-lg md:text-xl lg:text-2xl text-white font-semibold py-5 text-right pr-5 '>Total: ${total}</p>
                         </div>
 
                     }
