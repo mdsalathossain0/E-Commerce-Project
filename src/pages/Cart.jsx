@@ -39,7 +39,7 @@ const Cart = () => {
 
   
   return (
-   <section className='py-10 lg:py-20 px-4 sm:px-6 lg:px-10'>
+   <section className='py-10 lg:py-20 px-5 '>
   <Container>
     <SubHeading text='Cart' />
 
