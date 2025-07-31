@@ -9,11 +9,9 @@ import { Link } from 'react-router-dom'
 
 const MyAccount = () => {
 
-  let prev = useSelector(state=>state.action.prevvalue)
-  let next = useSelector(state=>state.action.currentvalue)
+  let prev = useSelector((state)=>state.action.prevvalue)
+  let next = useSelector((state)=>state.action.currentvalue)
 
-  console.log(prev)
-  console.log(next)
   return (
     <section className='py-15 lg:py-26 px-5'>
       <Container>
