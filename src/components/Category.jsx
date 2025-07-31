@@ -20,8 +20,8 @@ const Category = ({text,type}) => {
        dispatch(categoryFunction(true))
      }
   return (
-            <Flex className='justify-between items-center py-5 border-b border-sixth'>
-          <p className='text-first text-base font-san font-normal leading-7'>{text}</p>
+            <Flex className='justify-between items-center py-5 border-b border-sixth last:border-0'>
+          <p className='text-first text-sm lg:text-base font-san font-normal leading-7'>{text}</p>
           {
             type == 'true'? 
             category ? 

@@ -57,7 +57,7 @@ function Paginate({ itemsPerPage }) {
   return (
     <>
       <Items currentItems={currentItems} />
-     <div className='mt-12 flex justify-between items-center'>
+     <div className='mt-12  flex  flex-col lg:flex-row gap-y-8 lg;gap-y-0 lg:justify-between lg:items-center'>
        <ReactPaginate
         breakLabel="..."
         nextLabel=""
@@ -66,11 +66,11 @@ function Paginate({ itemsPerPage }) {
         pageCount={pageCount}
         previousLabel=""
         renderOnZeroPageCount={null}
-        containerClassName="flex "
-        pageLinkClassName=" py-2.5 px-4 text-first font-san text-sm border border-sixth mr-4 hover:bg-second hover:text-white duration-300"
+        containerClassName="flex"
+        pageLinkClassName="py-1.5 lg:py-2.5 px-2 lg:px-4 text-first font-san text-sm border border-sixth mr-4 hover:bg-second hover:text-white duration-300"
         activeLinkClassName="bg-second text-white"
       />
-      <p className='text-sm text-first font-san leading-7'>Products from {itemOffset + 1} to {endOffset<allitem.length ? endOffset:allitem.length} of {allitem.length}</p>
+      <p className='text-xs lg:text-sm text-first font-san leading-7'>Products from {itemOffset + 1} to {endOffset<allitem.length ? endOffset:allitem.length} of {allitem.length}</p>
      </div>
     </>
   );

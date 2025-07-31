@@ -67,7 +67,7 @@ let handleChange = (e)=>{
   return (
     <section className='bg-third py-3 lg:py-6 px-5 '>
         <Container>
-            <Flex className='items-center'>
+            <Flex className='items-center gap-x-1'>
                 <div className='w-4/12'>
                     <Flex className='gap-x-3 items-center'>
                     <IoReorderTwo className='text-sm md:text-base lg:text-lg text-second'/>
@@ -129,7 +129,7 @@ let handleChange = (e)=>{
                                             <span className='px-2'>{item.quantity}</span>
                                             <span onClick={()=>handleIncrement(item)}>+</span>
                                         </li>
-                                        <li className='md:w-[70px] lg:w-[70px] lg:pr-7'>${item.price*item.quantity}</li>
+                                        <li className='md:w-[70px] lg:w-[70px] lg:pr-7'>${(item.price*item.quantity).toFixed(2)}</li>
 
                                         </ul>
                                     </>
@@ -143,7 +143,7 @@ let handleChange = (e)=>{
                                 <Link to='/cart'><button className='text-sm font-bold font-san py-4 px-3 md:px-8 lg:px-10 text-black bg-white border border-transparent hover:bg-transparent hover:text-white hover:border-white'>View cart</button></Link>
                                 <Link to='/checkout'><button className='text-sm font-bold font-san py-4 px-3 md:px-8 lg:px-10 text-black bg-white border border-transparent hover:bg-transparent hover:text-white hover:border-white'>Checkout</button></Link>
                               </div>
-                            <p className='text-lg md:text-xl lg:text-2xl text-white font-semibold py-5 text-right pr-5 '>Total: ${total}</p>
+                            <p className='text-lg md:text-xl lg:text-2xl text-white font-semibold py-5 text-right pr-5 '>Total: ${(total.toFixed(2))}</p>
                         </div>
 
                     }
