@@ -21,6 +21,7 @@ let [allitem, setAllitem] = useState([])
 let [find, setFind] = useState([])
 let [input, setInput] = useState('')
 
+ let cartRef = useRef(null)
 
 let [total, setTotal]= useState(0)
 
@@ -41,6 +42,10 @@ let handleRemove=(item)=>{
     dispatch(removeItem(item))
 }
 
+let handleHide=()=>{
+    setFind([])
+    setInput('')
+}
 useEffect(()=>{
     let total = 0
    data && data.map(item=>{
@@ -62,7 +67,20 @@ let handleChange = (e)=>{
   let search =  allitem.filter(item=>item.title.toLowerCase().includes(e.target.value.toLowerCase()))
   setFind(search)
 }
+// hide cart click random
+useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (show && cartRef.current && !cartRef.current.contains(event.target)) {
+                setShow(false)
+            }
+        }
 
+        document.addEventListener('mousedown', handleOutsideClick)
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick)
+        }
+    }, [show])
 
   return (
     <section className='bg-third py-3 lg:py-6 px-5 '>
@@ -84,7 +102,7 @@ let handleChange = (e)=>{
                         <div className='w-[300px] md:w-[500px] lg:w-[550px] bg-white py-5 px-4 absolute top-[47px] lg:top-[62px] -right-15 lg:left-0 border border-second z-10'>
                         {
                             find.map(item=>(
-                                <Link to='/shop'><div className='flex gap-x-5 items-center py-3 border-b border-first cursor-pointer'><Image className='w-[40px]' src={item.thumbnail}/> {item.title}</div></Link>
+                                <Link onClick={handleHide} to={`/productdetails/${item.title}`}><div className='flex gap-x-5 items-center py-3 border-b border-first cursor-pointer'><Image className='w-[40px]' src={item.thumbnail}/> {item.title}</div></Link>
                     
                             ))
                         }
@@ -103,7 +121,7 @@ let handleChange = (e)=>{
                         <FaShoppingCart onClick={()=>(setShow(!show))} className='text-xs md:text-sm lg:text-base text-first'/> 
                     </Flex>
                     {
-                        show && <div className='w-[250px] md:w-[500px] lg:w-[700px] h-auto bg-black absolute top-0 right-2 lg:right-10 z-10'>
+                        show && <div ref={cartRef} className='w-[250px] md:w-[500px] lg:w-[700px] h-auto bg-black absolute top-0 right-2 lg:right-10 z-10'>
                             <RxCross2 onClick={()=>(setShow(!show))} className='text-xl font-bold text-white m-5'/>
                             <ul className='flex justify-between md:justify-around lg:justify-around text-sm md:text-base lg:text-lg text-white font-bold border border-white py-2 px-6'>
                                 <li >Action:</li>
@@ -140,8 +158,8 @@ let handleChange = (e)=>{
                                 <h1 className= 'text-lg md:text-xl lg:text-2xl text-white font-semibold flex items-center justify-center pt-15 md:pt-20 lg:pt-30'>Cart is Empty</h1>
                             }
                               <div className='flex gap-x-3 lg:gap-x-5 pt-12 lg:pt-20 pb-12 lg:pb-20 justify-center'>
-                                <Link to='/cart'><button className='text-sm font-bold font-san py-4 px-3 md:px-8 lg:px-10 text-black bg-white border border-transparent hover:bg-transparent hover:text-white hover:border-white'>View cart</button></Link>
-                                <Link to='/checkout'><button className='text-sm font-bold font-san py-4 px-3 md:px-8 lg:px-10 text-black bg-white border border-transparent hover:bg-transparent hover:text-white hover:border-white'>Checkout</button></Link>
+                                <Link onClick={()=>(setShow(false))} to='/cart'><button className='text-sm font-bold font-san py-4 px-3 md:px-8 lg:px-10 text-black bg-white border border-transparent hover:bg-transparent hover:text-white hover:border-white'>View cart</button></Link>
+                                <Link onClick={()=>(setShow(false))} to='/checkout'><button className='text-sm font-bold font-san py-4 px-3 md:px-8 lg:px-10 text-black bg-white border border-transparent hover:bg-transparent hover:text-white hover:border-white'>Checkout</button></Link>
                               </div>
                             <p className='text-lg md:text-xl lg:text-2xl text-white font-semibold py-5 text-right pr-5 '>Total: ${(total.toFixed(2))}</p>
                         </div>
